@@ -1,0 +1,67 @@
+{
+    "name": "koendirkvanesterik_com",
+    "description": "Koen Dirk van Esterik - Portfolio website",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Koen Dirk van Esterik",
+            "email": "koen@koendirkvanesterik.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "elliotcondon/acf",
+                "version": "4.4.2",
+                "type": "wordpress-plugin",
+                "source": {
+                    "url": "https://github.com/elliotcondon/acf.git",
+                    "type": "git",
+                    "reference": "4.4.2"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "flipflopinteractive/acf-repeater",
+                "type": "wordpress-plugin",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://kdesterik@bitbucket.org/kdesterik/acf-repeater.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "4.5.2",
+        "wp-sync-db/wp-sync-db": "dev-master",
+        "elliotcondon/acf": "4.4.2",
+        "flipflopinteractive/acf-repeater": "dev-master",
+        "wpackagist-plugin/dwl-preloader": "1.1"
+    },
+    "config": {
+        "vendor-dir": "./dist/wp-content/plugins/",
+        "secure-http": false
+    },
+    "extra": {
+        "wordpress-install-dir": "./dist/wp/",
+        "installer-paths": {
+            "./dist/wp-content/plugins/{$name}": [
+                "wp-sync-db/wp-sync-db",
+                "elliotcondon/acf",
+                "flipflopinteractive/acf-repeater",
+                "wpackagist-plugin/dwl-preloader"
+            ]
+        }
+    }
+}
