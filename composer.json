@@ -17,12 +17,12 @@
             "type": "package",
             "package": {
                 "name": "elliotcondon/acf",
-                "version": "4.4.2",
                 "type": "wordpress-plugin",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/elliotcondon/acf.git",
                     "type": "git",
-                    "reference": "4.4.2"
+                    "reference": "master"
                 }
             }
         },
@@ -45,7 +45,7 @@
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "4.5.2",
         "wp-sync-db/wp-sync-db": "dev-master",
-        "elliotcondon/acf": "4.4.2",
+        "elliotcondon/acf": "dev-master",
         "flipflopinteractive/acf-repeater": "dev-master",
         "wpackagist-plugin/dwl-preloader": "1.1"
     },

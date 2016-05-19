@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9ce26a737d30f269a27ca286f39992e6",
-    "content-hash": "096fd1c679744bb0c012df416157b75f",
+    "hash": "912133bdfe3581510e8b2e85dc2998b5",
+    "content-hash": "3ebd9de8cd1dbdea5a687a90856af024",
     "packages": [
         {
             "name": "composer/installers",
@@ -109,13 +109,14 @@
         },
         {
             "name": "elliotcondon/acf",
-            "version": "4.4.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elliotcondon/acf.git",
-                "reference": "4.4.2"
+                "reference": "master"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "time": "2016-04-28 00:24:03"
         },
         {
             "name": "flipflopinteractive/acf-repeater",
@@ -271,6 +272,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wp-sync-db/wp-sync-db": 20,
+        "elliotcondon/acf": 20,
         "flipflopinteractive/acf-repeater": 20
     },
     "prefer-stable": false,
