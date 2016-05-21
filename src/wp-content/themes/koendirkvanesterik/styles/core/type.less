@@ -1,0 +1,56 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+
+	letter-spacing: 2px;
+	margin: 0;
+}
+
+
+// Body text
+// -------------------------
+
+p, .p {
+	font-family: @font-family-monospace;
+	font-size: @font-size-base;
+	letter-spacing: 1px;
+	margin: 0 0 @line-height-computed;
+}
+
+
+// Lists
+// -------------------------
+
+// Unordered lists
+ul {
+	list-style: none;
+	margin-bottom: @line-height-computed;
+	padding: 0;
+
+	li {
+		letter-spacing: 1px;
+	}
+	
+	&:before {
+
+		content: '–';
+		display: block;
+	}
+}
+
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: (12px small font / 14px base font) * 100% = about 85%
+small,
+.small {
+  font-size: @font-size-small;
+}

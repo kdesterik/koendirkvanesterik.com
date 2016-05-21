@@ -1,11 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "912133bdfe3581510e8b2e85dc2998b5",
-    "content-hash": "3ebd9de8cd1dbdea5a687a90856af024",
+    "hash": "92e23bcbe02dee4e9ca1724998f90d59",
     "packages": [
         {
             "name": "composer/installers",
@@ -247,16 +246,16 @@
             "time": "2016-04-24 08:56:12"
         },
         {
-            "name": "wpackagist-plugin/dwl-preloader",
-            "version": "1.1",
+            "name": "wpackagist-plugin/wp-api",
+            "version": "1.0.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/dwl-preloader/",
-                "reference": "trunk"
+                "url": "https://plugins.svn.wordpress.org/wp-api/",
+                "reference": "tags/1.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/dwl-preloader.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-api.1.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -264,7 +263,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/dwl-preloader/"
+            "homepage": "https://wordpress.org/plugins/wp-api/"
         }
     ],
     "packages-dev": [],
@@ -277,8 +276,6 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.4"
-    },
+    "platform": [],
     "platform-dev": []
 }

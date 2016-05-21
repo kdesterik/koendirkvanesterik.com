@@ -40,18 +40,17 @@
             }
         }
     ],
+    "config": {
+        "vendor-dir": "./dist/wp-content/plugins/",
+        "secure-http": false
+    },
     "require": {
-        "php": ">=5.4",
         "composer/installers": "~1.0",
         "johnpbloch/wordpress": "4.5.2",
         "wp-sync-db/wp-sync-db": "dev-master",
         "elliotcondon/acf": "dev-master",
         "flipflopinteractive/acf-repeater": "dev-master",
-        "wpackagist-plugin/dwl-preloader": "1.1"
-    },
-    "config": {
-        "vendor-dir": "./dist/wp-content/plugins/",
-        "secure-http": false
+        "wpackagist-plugin/wp-api": "1.0.3"
     },
     "extra": {
         "wordpress-install-dir": "./dist/wp/",
@@ -60,7 +59,7 @@
                 "wp-sync-db/wp-sync-db",
                 "elliotcondon/acf",
                 "flipflopinteractive/acf-repeater",
-                "wpackagist-plugin/dwl-preloader"
+                "wpackagist-plugin/wp-api"
             ]
         }
     }

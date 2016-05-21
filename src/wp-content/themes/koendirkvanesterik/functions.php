@@ -42,11 +42,6 @@ function koendirkvanesterik_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'koendirkvanesterik' ),
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -70,12 +65,6 @@ function koendirkvanesterik_setup() {
 		'quote',
 		'link',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'koendirkvanesterik_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'koendirkvanesterik_setup' );
@@ -93,36 +82,18 @@ function koendirkvanesterik_content_width() {
 add_action( 'after_setup_theme', 'koendirkvanesterik_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function koendirkvanesterik_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'koendirkvanesterik' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'koendirkvanesterik' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'koendirkvanesterik_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function koendirkvanesterik_scripts() {
 	wp_enqueue_style( 'koendirkvanesterik-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'koendirkvanesterik-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'koendirkvanesterik-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// Load javascript libraries (i.e. Bootstrap, etc.)
+	wp_enqueue_script( 'javascript-libraries', get_template_directory_uri() . '/js/libs.js', array(), '1.0.0', TRUE );
+	
+	// Load custom javascript scripts
+	wp_enqueue_script( 'custom-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', TRUE );
 }
 add_action( 'wp_enqueue_scripts', 'koendirkvanesterik_scripts' );
 
@@ -150,3 +121,51 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Enable livereload on localhost
+ */
+function livereload() {
+
+	if( in_array( $_SERVER[ 'REMOTE_ADDR' ], array( '127.0.0.1', '::1' ))){
+
+		wp_register_script( 'livereload', 'http://localhost:35729/livereload.js?snipver=1', NULL, FALSE, TRUE );
+		wp_enqueue_script( 'livereload' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'livereload' );
+
+
+/**
+ * Rename 'Post' label to 'Project'
+ */
+function koendirkvanesterik_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] 				= 'Projects';
+    $submenu['edit.php'][5][0] 	= 'Projects';
+    $submenu['edit.php'][10][0] = 'Add Project';
+    $submenu['edit.php'][16][0] = 'Project Tags';
+    echo '';
+}
+add_action( 'admin_menu', 'koendirkvanesterik_change_post_label' );
+
+function koendirkvanesterik_change_post_object() {
+    global $wp_post_types;
+    $labels 					= &$wp_post_types['post']->labels;
+    $labels->name 				= 'Projects';
+    $labels->singular_name 		= 'Project';
+    $labels->add_new 			= 'Add Project';
+    $labels->add_new_item 		= 'Add Project';
+    $labels->edit_item 			= 'Edit Project';
+    $labels->new_item 			= 'Projects';
+    $labels->view_item 			= 'View Projects';
+    $labels->search_items 		= 'Search Projects';
+    $labels->not_found 			= 'No Projects found';
+    $labels->not_found_in_trash = 'No Projects found in Trash';
+    $labels->all_items 			= 'All Projects';
+    $labels->menu_name 			= 'Projects';
+    $labels->name_admin_bar 	= 'Projects';
+}
+add_action( 'init', 'koendirkvanesterik_change_post_object' );

@@ -46,10 +46,7 @@ module.exports = function(grunt) {
 			libs: {
 				src: [
 					'./bower_components/jquery/dist/jquery.min.js',
-					'./bower_components/pagePiling.js/jquery.pagepiling.min.js',
-					'./bower_components/jquery-validation/dist/jquery.validate.min.js',
-					'./bower_components/vide/dist/jquery.vide.min.js',
-					'./bower_components/gemini-scrollbar/index.js',
+					'./bower_components/Scrollify/jquery.scrollify.min.js',
 				],
 				dest: '<%= config.dist %>/js/libs.js'
 			},
