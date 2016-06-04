@@ -1,4 +1,15 @@
-/bower_components/
+/content/apps/
+/content/data/
+/content/images/
+/content/themes/casper/
+/content/themes/drive/assets/
+/content/themes/drive/bower_components/
+/content/themes/drive/node_modules/
+/core/
 /node_modules/
 .DS_Store
-
+config.js
+Gruntfile.js
+index.js
+npm-shrinkwrap.json
+package.json
