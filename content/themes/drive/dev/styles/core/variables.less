@@ -1,0 +1,40 @@
+//
+// Core: Variables
+// --------------------------------------------------
+
+// Colors
+
+@white:			#FFFFFF;
+@gray-base:     #000A14;
+@brand-primary: #FC0B7E;
+
+
+// Typography
+
+@font-family-sans-serif:  'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-monospace: 'Akkurat Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+.heading(){
+	font-family: @font-family-sans-serif;
+	font-size: 3em;
+	font-weight: normal;
+	letter-spacing: 2px;
+	line-height: 1em;
+	margin: 0;
+}
+
+.paragraph(){
+	font-family: @font-family-monospace;
+	font-size: 1em;
+	font-weight: normal;
+	letter-spacing: 1px;
+	line-height: @golden-ratio + 0em;
+	margin: 0;
+}
+
+
+// Layout
+
+@golden-ratio: 1.618;
+@readable-width: 44em;
+@z-index-assets: 10;

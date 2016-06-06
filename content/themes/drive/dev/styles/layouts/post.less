@@ -1,0 +1,41 @@
+//
+// Layout: Post
+// --------------------------------------------------
+
+.post-template {
+
+	.site-header {
+
+		margin-bottom: 0;
+		position: fixed;
+		z-index: @z-index-assets;
+	}
+
+	.site-footer {
+
+		margin-top: -( @golden-ratio * 5 ) + 0em;
+		position: relative;
+		z-index: @z-index-assets;
+	}
+}
+
+.post-content {
+
+	section {
+		
+		display: flex;
+		min-height: 100vh;
+		overflow: hidden;
+		position: relative;
+
+		.container {
+
+			max-width: @readable-width;
+			padding: ( @golden-ratio * 8 ) + 0em @golden-ratio + 0em 0;
+
+			h1 {
+				.heading();
+			}
+		}
+	}
+}

@@ -2,7 +2,8 @@
 /content/data/
 /content/images/
 /content/themes/casper/
-/content/themes/drive/assets/
+/content/themes/drive/assets/css/
+/content/themes/drive/assets/js/
 /content/themes/drive/bower_components/
 /content/themes/drive/node_modules/
 /core/
@@ -11,5 +12,6 @@
 config.js
 Gruntfile.js
 index.js
+npm-debug.*
 npm-shrinkwrap.json
 package.json
