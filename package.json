@@ -1,0 +1,29 @@
+{
+	"name": "Drive ",
+	"version": "0.0.1",
+	"description": "This is a [Ghost](http://ghost.org) theme using [H5BP](http://html5boilerplate.com/) and [gulp](http://gulpjs.com/).",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kdesterik/koendirkvanesterik.com.git"
+	},
+	"main": "gulp",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Koen Dirk van Esterik",
+	"license": "MIT",
+	"dependencies": {
+	},
+	"devDependencies": {
+		"bower": "^1.2.8",
+		"gulp": "^3.5.5",
+		"gulp-autoprefixer": "^3.1.0",
+		"gulp-concat": "^2.1.7",
+		"gulp-exec": "^1.0.4",
+		"gulp-less": "^3.1.0",
+		"gulp-livereload": "^1.2.0",
+		"gulp-util": "^3.0.7",
+		"gulp-watch": "^0.5.0",
+		"tiny-lr": "0.0.5"
+	}
+}
