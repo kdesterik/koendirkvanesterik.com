@@ -69,6 +69,7 @@ gulp.task( 'watch', function(){
 
 		gulp.watch( './source/styles/**/*.less', [ 'style' ]);
 		gulp.watch( './source/scripts/*.js', [ 'scripts' ]);
+		gulp.watch( './helpers.js', [ 'scripts' ]);
 		gulp.watch( './*.hbs', [ 'template' ]);
 	});
 });

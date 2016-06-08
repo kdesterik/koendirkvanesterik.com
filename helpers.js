@@ -2,7 +2,7 @@
 * @Author: Koen Dirk van Esterik
 * @Date:   2016-06-05 14:01:04
 * @Last Modified by:   Koen Dirk van Esterik
-* @Last Modified time: 2016-06-06 07:44:35
+* @Last Modified time: 2016-06-08 23:35:42
 */
 
 'use strict';
@@ -63,23 +63,30 @@ module.exports = function() {
 		var map = [{
 
 			from: /<p><img(.*?)><\/p>/g,
-			to: function( key, value ){
+			to: function( match, i ){
 
-				return '<section><img' + value + '></section>';
+				return '<section><img' + i + '></section>';
+			}
+		},{
+
+			from: /<img(.*?)(fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
+			to: function( match, i, original ){
+
+				return '<div class="' + original + '">' + match + '</div>';
 			}
 		},{
 
 			from: /<h1(.*?)>(.*?)<\/h1>/g,
-			to: function( value ){
+			to: function( match ){
 
-				return '<section><div class="container">' + value + '</div></section>';
+				return '<section><div class="container">' + match + '</div></section>';
 			}
 		},{
 
 			from: /<p>(.*?)<\/p>/g,
-			to: function( value ){
+			to: function( match ){
 
-				return '<section><div class="container">' + value + '</div></section>';
+				return '<section><div class="container">' + match + '</div></section>';
 			}
 		}]
 
