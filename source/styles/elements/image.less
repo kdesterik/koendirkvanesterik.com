@@ -1,0 +1,51 @@
+img {
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate( -50%, -50% );
+
+	// &[ src$='#fullscreen' ]{
+
+	// 	/* Set rules to fill background */
+	// 	min-height: 100%;
+	// 	min-width: 1280px;
+
+	// 	/* Set up proportionate scaling */
+	// 	width: 100%;
+	// 	height: auto;
+
+	// 	/* Set up positioning */
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+
+	// 	@media screen and ( max-width: 1280px ){
+
+	// 		left: 50%;
+	// 		margin-left: -640px;
+	// 	}
+	// }
+
+	&[ src$='#desktop' ]{
+
+		border-bottom-left-radius: 1em;
+		border-bottom-right-radius: 1em;
+		border-top-left-radius: 0.25em;
+		border-top-right-radius: 0.25em;
+
+		&:before {
+
+			background-image: url( '../images/desktop-chrome.svg' );
+			content: '';
+			display: block;
+			height: 850px;
+			position: absolute;
+			left: 0;
+			top: -36px;
+		}
+	}
+}
