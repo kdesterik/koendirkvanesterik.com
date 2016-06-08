@@ -22,7 +22,7 @@ gulp.task( 'template', function () {
 
 
 gulp.task( 'style', function(){
-	return gulp.src( './dev/styles/styles.less' )
+	return gulp.src( './source/styles/styles.less' )
 		.pipe( less() )
 		.pipe( autoprefixer({ 'browsers': [ '> 5%' ]}))
 		.pipe( gulp.dest( 'assets/css' ))
@@ -35,20 +35,22 @@ gulp.task( 'libs', function () {
 			'./bower_components/modernizr/modernizr.js'
 		])
 		.pipe( concat( 'libs.js' ))
+		.pipe( uglify() )
 		.pipe( gulp.dest( './assets/js' ))
 		.pipe( livereload( server ));
 });
 
 
 gulp.task( 'scripts', function(){
-	return gulp.src( './dev/scripts/*.js' )
+	return gulp.src( './source/scripts/*.js' )
 		.pipe( jshint() )
   		.pipe( jshint.reporter( 'jshint-stylish' ))
 		.pipe( tap( function( file ){
 		  file.contents = browserify( file.path, { debug: false }).bundle();
 		}))
 		// .pipe( uglify() )
-		.pipe( gulp.dest( './assets/js' ));
+		.pipe( gulp.dest( './assets/js' ))
+		.pipe( livereload( server ));
 });
 
 
@@ -65,8 +67,8 @@ gulp.task( 'watch', function(){
 			return console.log( err );
 		};
 
-		gulp.watch( './dev/styles/**/*.less', [ 'style' ]);
-		gulp.watch( './dev/scripts/*.js', [ 'scripts' ]);
+		gulp.watch( './source/styles/**/*.less', [ 'style' ]);
+		gulp.watch( './source/scripts/*.js', [ 'scripts' ]);
 		gulp.watch( './*.hbs', [ 'template' ]);
 	});
 });
@@ -79,23 +81,20 @@ gulp.task( 'default', [ 'style', 'libs', 'scripts' ], function(){
 
 
 var ssh = new SSH({
-
 	'ignoreErrors': false,
 	'sshConfig': {
-
 		'host': '146.185.166.164',
 		'port': 22,
 		'username': 'root',
 		'privateKey': fs.readFileSync( '/Users/kdesterik/.ssh/id_rsa' )
 	}
-})
-
+});
 
 gulp.task( 'deploy', function(){
 	return gulp.src([
 		'./**/*.*',
 		'!**/bower_components/**',
-		'!**/dev/**',
+		'!**/source/**',
 		'!**/node_modules/**',
 		'!./.editorconfig',
 		'!./.gitignore',
