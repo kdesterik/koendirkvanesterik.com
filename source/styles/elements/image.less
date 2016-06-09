@@ -1,51 +1,62 @@
 img {
-	height: auto;
-	margin: 0 auto;
-	max-width: 100%;
-
 	left: 50%;
+	max-width: 100%;
 	position: absolute;
 	top: 50%;
 	transform: translate( -50%, -50% );
+}
 
-	// &[ src$='#fullscreen' ]{
+.fullscreen {
 
-	// 	/* Set rules to fill background */
-	// 	min-height: 100%;
-	// 	min-width: 1280px;
+	height: 200%;
+	left: -50%;
+	position: absolute;
+	top: -50%;
+	width: 200%;
 
-	// 	/* Set up proportionate scaling */
-	// 	width: 100%;
-	// 	height: auto;
+	img {
 
-	// 	/* Set up positioning */
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
+		bottom: 0;
+		left: 0; 
+		margin: auto;
+		max-width: none;
+		min-width: 50%;
+		min-height: 50%;
+		position: absolute; 
+		right: 0;
+		top: 0;
+		transform: none;
+	}
+}
 
-	// 	@media screen and ( max-width: 1280px ){
+.desktop {
 
-	// 		left: 50%;
-	// 		margin-left: -640px;
-	// 	}
-	// }
+	display: inline-block;
+	padding: @golden-ratio + 0em;
 
-	&[ src$='#desktop' ]{
+	&:before {
+
+		border-style: solid;
+		border-width: 40px 40px 0 100px;
+		border-image: url( '../images/desktop-chrome.svg' ) 40 40 0 100;
+
+		content: "";
+		display: block;
+		margin-bottom: 4px
+	}
+
+	img {
+
+		// margin: 0 0 0 -100px;
 
 		border-bottom-left-radius: 1em;
 		border-bottom-right-radius: 1em;
 		border-top-left-radius: 0.25em;
 		border-top-right-radius: 0.25em;
 
-		&:before {
-
-			background-image: url( '../images/desktop-chrome.svg' );
-			content: '';
-			display: block;
-			height: 850px;
-			position: absolute;
-			left: 0;
-			top: -36px;
-		}
+		left: auto;
+		position: static;
+		top: auto;
+		transform: none;
 	}
 }
