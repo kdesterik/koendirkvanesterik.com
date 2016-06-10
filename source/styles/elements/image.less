@@ -47,8 +47,6 @@ img {
 
 	img {
 
-		// margin: 0 0 0 -100px;
-
 		border-bottom-left-radius: 1em;
 		border-bottom-right-radius: 1em;
 		border-top-left-radius: 0.25em;
@@ -58,5 +56,15 @@ img {
 		position: static;
 		top: auto;
 		transform: none;
+	}
+}
+
+.b-lazy {
+	transition: opacity 640ms ease-in-out;
+	opacity: 0;
+
+	&.b-loaded {
+
+		opacity: 1;
 	}
 }

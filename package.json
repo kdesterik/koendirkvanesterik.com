@@ -13,6 +13,7 @@
   "author": "Koen Dirk van Esterik",
   "license": "MIT",
   "dependencies": {
+    "blazy": "^1.6.2",
     "jquery": "^2.2.4"
   },
   "devDependencies": {

@@ -53,36 +53,32 @@ module.exports = function() {
 
 
 	/**
-	 * {{#section_wrap}} wrap specified content in section tags
+	 * {{#beautify_post}} wrap specified content in section tags
 	 *
 	 * @param object content
 	 * @return string
 	 */
-	handlebars.registerHelper( 'section_wrap', function( content ){
+	handlebars.registerHelper( 'beautify_post', function( content ){
 
 		var map = [{
-
+			from: /src/g,
+			to: 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src'
+		},{
 			from: /<p><img(.*?)><\/p>/g,
 			to: function( match, i ){
-
 				return '<section><img' + i + '></section>';
 			}
 		},{
-
 			from: /<img(.*?)(fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
 			to: function( match, i, original ){
-
 				return '<div class="' + original + '">' + match + '</div>';
 			}
 		},{
-
 			from: /<h1(.*?)>(.*?)<\/h1>/g,
 			to: function( match ){
-
 				return '<section><div class="container">' + match + '</div></section>';
 			}
 		},{
-
 			from: /<p>(.*?)<\/p>/g,
 			to: function( match ){
 
@@ -91,11 +87,8 @@ module.exports = function() {
 		}]
 
 		var string = content.fn( this );
-
 		_.each( map, function( value ){
-
 			if( !( value.from instanceof RegExp )){
-
 				var fromSafe = String( value.from ).replace( /[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&" );
 				value.from = new RegExp( fromSafe, 'g' );
 			}

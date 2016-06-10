@@ -8,9 +8,7 @@
 <main class="content" role="main">
 	<article class="{{ post_class }}" role="article" itemscope itemtype="http://schema.org/Article">
 		<div class="post-content" itemprop="articleBody">
-
-			{{#section_wrap}}{{ content }}{{/section_wrap}}
-
+			{{#beautify_post}}{{ content }}{{/beautify_post}}
 		</div>
 	</article>
 </main>

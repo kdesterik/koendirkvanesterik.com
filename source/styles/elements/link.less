@@ -3,14 +3,17 @@
 // --------------------------------------------------
 
 a {
-	color: fade( @white, 90% );
+	color: @gray-light;
+	display: inline-block;
+	margin: 0 -0.15em;
+	padding: 0 0.15em;
 	text-decoration: none;
-	transition-duration: 100ms;
+	transition-duration: 160ms;
 
 	&:hover, &:focus {
 
-		background-color: @brand-primary;
-		color: @gray-base;
+		background-color: @accent;
+		color: @gray-dark;
 		outline: none;
 	}
 }
