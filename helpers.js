@@ -69,7 +69,7 @@ module.exports = function() {
 				return '<section><img' + i + '></section>';
 			}
 		},{
-			from: /<img(.*?)(fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
+			from: /<img(.*?)(logo|fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
 			to: function( match, i, original ){
 				return '<div class="' + original + '">' + match + '</div>';
 			}
