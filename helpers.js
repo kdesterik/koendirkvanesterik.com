@@ -58,7 +58,7 @@ module.exports = function() {
 	 * @param object content
 	 * @return string
 	 */
-	handlebars.registerHelper( 'beautify_post', function( content ){
+	handlebars.registerHelper( 'process_post', function( content ){
 
 		var map = [{
 			from: /src/g,
