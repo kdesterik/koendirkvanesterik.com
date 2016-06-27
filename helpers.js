@@ -53,7 +53,7 @@ module.exports = function() {
 
 
 	/**
-	 * {{#beautify_post}} wrap specified content in section tags
+	 * {{#process_post}} wrap specified content in section tags
 	 *
 	 * @param object content
 	 * @return string
@@ -64,25 +64,9 @@ module.exports = function() {
 			from: /src/g,
 			to: 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src'
 		},{
-			from: /<p><img(.*?)><\/p>/g,
-			to: function( match, i ){
-				return '<section><img' + i + '></section>';
-			}
-		},{
 			from: /<img(.*?)(logo|fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
 			to: function( match, i, original ){
 				return '<div class="' + original + '">' + match + '</div>';
-			}
-		},{
-			from: /<h1(.*?)>(.*?)<\/h1>/g,
-			to: function( match ){
-				return '<section><div class="container">' + match + '</div></section>';
-			}
-		},{
-			from: /<p>(.*?)<\/p>/g,
-			to: function( match ){
-
-				return '<section><div class="container">' + match + '</div></section>';
 			}
 		}]
 

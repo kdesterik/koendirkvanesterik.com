@@ -4,5 +4,5 @@ var $ = global.$ = require( 'jquery' );
 var jQuery = global.jQuery = require( 'jquery' );
 							
 var Blazy = require( 'blazy' );
-var bLazy = new Blazy({ 'offset': 0 });
+var bLazy = new Blazy();
 
