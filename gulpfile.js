@@ -12,7 +12,8 @@ var gulp         = require( 'gulp' ),
 	lr           = require( 'tiny-lr' ),
 	server       = lr(),
 	fs 			 = require( 'fs' ),
-	SSH 		 = require( 'gulp-ssh' );
+	SSH 		 = require( 'gulp-ssh' ),
+	rsync 		 = require( 'gulp-rsync' );
 
 
 gulp.task( 'template', function () {
@@ -91,20 +92,44 @@ var ssh = new SSH({
 	}
 });
 
-gulp.task( 'deploy', function(){
+// gulp.task( 'deploy', function(){
+// 	return gulp.src([
+// 		'./assets/css/*.*',
+// 		'./assets/images/*.*',
+// 		'./assets/js/*.*',
+// 		// '!./bower_components/**',
+// 		// '!./source/**',
+// 		// '!./node_modules/**',
+// 		// '!./.editorconfig',
+// 		// '!./.gitignore',
+// 		// '!./.jshintrc',
+// 		// '!./bower.json',
+// 		// '!./gulpfile.js',
+// 		// '!./LICENSE',
+// 		// '!./README.md',
+// 	])
+//     .pipe( ssh.dest( '/var/www/ghost/content/themes/drive/' ))
+//     .pipe( ssh.shell([ 'chown -R ghost:ghost /var/www/ghost/content/themes/drive/' ]));
+// });
+
+
+
+gulp.task('deploy', function() {
 	return gulp.src([
-		'./**/*.*',
-		'!**/bower_components/**',
-		'!**/source/**',
-		'!**/node_modules/**',
-		'!./.editorconfig',
-		'!./.gitignore',
-		'!./.jshintrc',
-		'!./bower.json',
-		'!./gulpfile.js',
-		'!./LICENSE',
-		'!./README.md',
+		'assets/css/*.css',
+		'assets/images/*.{gif,jpg,png,svg}',
+		'assets/js/*.js',
+		'helpers.js',
+		'*.hbs'
 	])
-    .pipe( ssh.dest( '/var/www/ghost/content/themes/drive/' ))
-    .pipe( ssh.shell([ 'chown -R ghost:ghost /var/www/ghost/content/themes/drive/' ]));
+	.pipe( rsync({
+		'root': './',
+		'hostname': '146.185.166.164',
+		'destination': '/var/www/ghost/content/themes/drive/',
+		'archive': true,
+		'silent': false,
+		'compress': true,
+		'dryrun': false,
+		'username': 'root'
+	}));
 });

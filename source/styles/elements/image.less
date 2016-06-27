@@ -19,41 +19,61 @@ img {
 	img {
 
 		bottom: 0;
-		left: 0; 
+		left: 0;
 		margin: auto;
 		max-width: none;
 		min-width: 50%;
 		min-height: 50%;
-		position: absolute; 
+		position: absolute;
 		right: 0;
 		top: 0;
 		transform: none;
 	}
 }
 
-.desktop {
+
+.desktop, .laptop, .tablet, .mobile {
 
 	display: inline-block;
 
 	&:before {
-
 		border-style: solid;
-		border-width: 40px 40px 0 100px;
-		border-image: url( '../images/desktop-chrome.svg' ) 40 40 0 100;
 		content: "";
 		display: block;
 		margin-bottom: 4px
 	}
 
 	img {
-
 		background-color: black;
+	}
+}
+
+.desktop, .laptop {
+
+	&:before {
+		border-width: 40px 40px 0 100px;
+		border-image: url( '../images/browser-chrome.svg' ) 40 40 0 100;
+	}
+
+	img {
 		border-bottom-left-radius: 1em;
 		border-bottom-right-radius: 1em;
 		border-top-left-radius: 0.25em;
 		border-top-right-radius: 0.25em;
+	}
+}
+
+.desktop {
+	img {
 		height: 984px;
 		width: 1748px;
+	}
+}
+
+.laptop {
+	img {
+		height: 672px;
+		width: 1195px;
 	}
 }
 
