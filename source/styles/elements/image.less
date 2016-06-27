@@ -77,6 +77,54 @@ img {
 	}
 }
 
+.tablet, .mobile {
+
+	&:after {
+		border-style: solid;
+		content: "";
+		display: block;
+		margin-top: -3px
+	}
+}
+
+.tablet {
+
+	&:before {
+		border-width: 60px 0 0 0;
+		border-image: url( '../images/tablet-chrome-top.svg' ) 60 0 0 0;
+	}
+
+	&:after {
+		border-width: 68px 0 0 0;
+		border-image: url( '../images/tablet-chrome-bottom.svg' ) 68 0 0 0;
+	}
+
+	img {
+		border-radius: 0.25em;
+		height: 700px;
+		width: 627px;
+	}
+}
+
+.mobile {
+
+	&:before {
+		border-width: 50px 0 0 0;
+		border-image: url( '../images/mobile-chrome-top.svg' ) 50 0 0 0;
+	}
+
+	&:after {
+		border-width: 50px 0 0 0;
+		border-image: url( '../images/mobile-chrome-bottom.svg' ) 50 0 0 0;
+	}
+
+	img {
+		border-radius: 0.25em;
+		height: 300px;
+		width: 230px;
+	}
+}
+
 .b-lazy {
 
 	transition: opacity 640ms ease-in-out;

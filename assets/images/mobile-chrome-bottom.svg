@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="230px" height="50px" viewBox="0 0 230 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Bottom</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-45.000000, -492.000000)" fill="#073642">
+            <g id="Device" transform="translate(45.000000, 26.000000)">
+                <g id="Chrome">
+                    <path d="M0,481.992196 C0,473.15995 7.16747094,466 15.9905464,466 L214.009454,466 C222.840789,466 230,473.163781 230,481.992196 L230,516 L0,516 L0,481.992196 Z M115,509 C124.941125,509 133,500.941125 133,491 C133,481.058875 124.941125,473 115,473 C105.058875,473 97,481.058875 97,491 C97,500.941125 105.058875,509 115,509 Z M115,505 C122.731986,505 129,498.731986 129,491 C129,483.268014 122.731986,477 115,477 C107.268014,477 101,483.268014 101,491 C101,498.731986 107.268014,505 115,505 Z" id="Bottom" transform="translate(115.000000, 491.000000) scale(1, -1) translate(-115.000000, -491.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
