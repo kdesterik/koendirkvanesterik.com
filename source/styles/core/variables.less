@@ -3,15 +3,13 @@
 // --------------------------------------------------
 
 // Colors
-
-@gray-dark:     #002b36; //#000A14;
+@gray-dark:     #002b36;
 @gray:		    #839496;
-@gray-light:	#fdf6e3; //#FFFFFF;
-@accent: 		#d33682; //#FC0B7E;
+@gray-light:	#fdf6e3;
+@accent: 		#FFDC00;
 
 
 // Typography
-
 @font-family-sans-serif:  'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @font-family-monospace: 'Akkurat Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
 
@@ -35,12 +33,18 @@
 
 
 // Layout
-
 @golden-ratio: 1.618;
 @readable-width: 44em;
 @z-index-assets: 10;
+@z-index-background: -@z-index-assets;
+@z-index-content: @z-index-assets;
 
-// Other
 
-@animation-speed: 160ms;
+// Animations
+@animation-speed: 160;
 @animation-ease: cubic-bezier( 0.215, 0.61, 0.355, 1 );
+
+.transition-default( @factor: 1 ){
+	transition-duration: @animation-speed * @factor + 0ms;
+	transition-timing-function: @animation-ease;
+}

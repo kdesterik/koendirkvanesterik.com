@@ -1,14 +1,13 @@
 /*
 * @Author: Koen Dirk van Esterik
-* @Date:   2016-06-05 14:01:04
-* @Last Modified by:   Koen Dirk van Esterik
+* @Date:	 2016-06-05 14:01:04
+* @Last Modified by:	 Koen Dirk van Esterik
 * @Last Modified time: 2016-06-08 23:35:42
 */
 
 'use strict';
 
 var handlebars = require( 'express-hbs' );
-var _ = require( 'lodash' );
 
 module.exports = function() {
 
@@ -25,27 +24,27 @@ module.exports = function() {
 
 		switch( operator ){
 			case '==':
-					return ( v1 == v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 == v2 )	? options.fn( this ) : options.inverse( this );
 			case '===':
 					return ( v1 === v2 ) ? options.fn( this ) : options.inverse( this );
 			case '!=':
-					return ( v1 != v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 != v2 )	? options.fn( this ) : options.inverse( this );
 			case '!==':
 					return ( v1 !== v2 ) ? options.fn( this ) : options.inverse( this );
 			case '<':
-					return ( v1 < v2 )   ? options.fn( this ) : options.inverse( this );
+					return ( v1 < v2 )	 ? options.fn( this ) : options.inverse( this );
 			case '<=':
-					return ( v1 <= v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 <= v2 )	? options.fn( this ) : options.inverse( this );
 			case '>':
-					return ( v1 > v2 )   ? options.fn( this ) : options.inverse( this );
+					return ( v1 > v2 )	 ? options.fn( this ) : options.inverse( this );
 			case '>=':
-					return ( v1 >= v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 >= v2 )	? options.fn( this ) : options.inverse( this );
 			case '&&':
-					return ( v1 && v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 && v2 )	? options.fn( this ) : options.inverse( this );
 			case '||':
-					return ( v1 || v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( v1 || v2 )	? options.fn( this ) : options.inverse( this );
 			case 'typeof':
-					return ( typeof v1 == v2 )  ? options.fn( this ) : options.inverse( this );
+					return ( typeof v1 == v2 )	? options.fn( this ) : options.inverse( this );
 			default:
 					return options.inverse( this );
 		}
@@ -53,13 +52,14 @@ module.exports = function() {
 
 
 	/**
-	 * {{#process_post}} wrap specified content in section tags
+	 * {{#process_post}} wrap specified content in div tags
 	 *
 	 * @param object content
 	 * @return string
 	 */
 	handlebars.registerHelper( 'process_post', function( content ){
 
+		var _ = require( 'lodash' );
 		var map = [{
 			from: /src/g,
 			to: 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src'
@@ -79,5 +79,18 @@ module.exports = function() {
 			string = string.replace( value.from, value.to );
 		});
 		return string;
+	});
+
+
+
+	/**
+	 * {{remove_slashes}} remove tralings slashes within str
+	 *
+	 * @param string str
+	 * @return string
+	 */
+	handlebars.registerHelper( 'remove_slashes', function( str ){
+		
+		return str.replace( /^\/|\/$/g, '' );
 	});
 };

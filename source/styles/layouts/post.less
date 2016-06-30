@@ -5,16 +5,13 @@
 .post-template {
 
 	.site-header {
-
-		position: relative;
-		z-index: @z-index-assets;
+		.post-title {
+			.paragraph();
+		}
 	}
 
 	.site-footer {
-
 		min-height: ( @golden-ratio * 5 ) + 0em;
-		position: relative;
-		z-index: @z-index-assets;
 	}
 }
 
@@ -34,12 +31,12 @@
 			margin-bottom: 0;
 			margin-top: 0;
 		}
-	}
 
-	h1 {
-		.heading();
-		max-width: @readable-width / 3;
-		margin-bottom: ( @golden-ratio * 2 ) + 0em;
+		strong {
+			.heading();
+			max-width: @readable-width / 3;
+			margin-bottom: ( @golden-ratio * 2 ) + 0em;
+		}
 	}
 
 	.logo, .desktop, .laptop, .tablet, .mobile {

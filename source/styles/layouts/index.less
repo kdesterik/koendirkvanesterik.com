@@ -2,28 +2,88 @@
 // Layout: Index
 // --------------------------------------------------
 
-.site-title {
+.site-background {
 
-	.paragraph();
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: @z-index-background;
+
+	.post-image {
+
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		.transition-default( 3 );
+
+		&.active {
+
+			opacity: 1;
+		}
+	}
 }
 
-.post {
+.site-header {
 
-	margin-bottom: ( @golden-ratio ) + 0em;
-}
-
-.post-header {
-
-	padding: 0 ( @golden-ratio ) + 0em;
-
-	.post-meta {
-
-		display: block;
-		font-size: 0.875em;
+	.site-title {
+		.paragraph();
+		.transition-default();
 	}
 
-	.post-title {
+	&.off {
+		.site-title {
+			opacity: 0;
+		}
+	}
+}
 
-		.heading();
+.post-link {
+
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	.post-header {
+		padding: ( @golden-ratio ) + 0em;
+
+		.post-meta {
+			color: @gray;
+			display: block;
+			font-size: 0.875em;
+			.transition-default();
+		}
+
+		.post-title {
+			.heading();
+		}
+	}
+
+	&:hover, &:focus {
+		.post-header {
+			.post-meta {
+				color: @gray-dark;
+			}
+		}
+	}
+
+	&.off {
+		opacity: 0;
+	}
+}
+
+
+.site-footer {
+	.transition-default();
+
+	&.off {
+		opacity: 0;
 	}
 }
