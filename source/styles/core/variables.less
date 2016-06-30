@@ -42,7 +42,7 @@
 
 // Animations
 @animation-speed: 160;
-@animation-ease: cubic-bezier( 0.215, 0.61, 0.355, 1 );
+@animation-ease: ease; // cubic-bezier( 0.215, 0.61, 0.355, 1 );
 
 .transition-default( @factor: 1 ){
 	transition-duration: @animation-speed * @factor + 0ms;
