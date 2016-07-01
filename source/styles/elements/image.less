@@ -34,7 +34,7 @@ img {
 
 .desktop, .laptop, .tablet, .mobile {
 
-	display: inline-block;
+	display: none;
 
 	&:before {
 		border-style: solid;
@@ -68,12 +68,20 @@ img {
 		height: 984px;
 		width: 1748px;
 	}
+
+	@media screen and ( min-width: 1815px ){
+		display: inline-block;
+	}
 }
 
 .laptop {
 	img {
 		height: 632px;
 		width: 1124px;
+	}
+
+	@media screen and ( min-width: 1191px ) and ( max-width: 1814px ){
+		display: inline-block;	
 	}
 }
 
@@ -104,6 +112,10 @@ img {
 		height: 700px;
 		width: 627px;
 	}
+
+	@media screen and ( min-width: 694px ) and ( max-width: 1190px ){
+		display: inline-block;	
+	}
 }
 
 .mobile {
@@ -122,6 +134,10 @@ img {
 		border-radius: 0.25em;
 		height: 300px;
 		width: 230px;
+	}
+
+	@media screen and ( max-width: 693px ){
+		display: inline-block;	
 	}
 }
 
