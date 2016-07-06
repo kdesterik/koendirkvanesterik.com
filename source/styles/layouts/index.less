@@ -22,7 +22,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		.transition-default( 3 );
+		// .transition-default( 3 );
 
 		&.active {
 
@@ -42,7 +42,6 @@
 
 	.site-title {
 		.paragraph();
-		.transition-default();
 	}
 
 	&.off {
@@ -57,6 +56,7 @@
 	display: block;
 	margin: 0;
 	padding: 0;
+	.transition-default( 0 );
 
 	.post-header {
 		padding: ( @golden-ratio ) + 0em;
@@ -65,7 +65,7 @@
 			color: @gray;
 			display: block;
 			font-size: 0.875em;
-			.transition-default();
+			// .transition-default();
 		}
 
 		.post-title {
@@ -83,13 +83,16 @@
 
 	&.off {
 		opacity: 0.2;
+		.post-header {
+			.post-meta {
+				color: @gray-light;
+			}
+		}
 	}
 }
 
 
 .site-footer {
-	.transition-default();
-
 	&.off {
 		opacity: 0;
 	}
