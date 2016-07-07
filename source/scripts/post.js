@@ -18,5 +18,5 @@ $( window ).resize( function(){
 
 		bLazy.revalidate();
 
-	}, 750 );
+	}, 500 );
 });
