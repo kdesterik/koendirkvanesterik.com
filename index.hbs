@@ -15,7 +15,11 @@
 	<a id="{{ remove_slashes url }}" class="post-link" href="{{ url }}" rel="bookmark">
 		<article class="{{ post_class }}" role="article" itemscope itemtype="http://schema.org/Article">
 			<header class="post-header">
-				<span class="post-meta"><time datetime="{{ date format='YYYY-MM-DD' }}" itemprop="datePublished">{{ date format="YYYY.MM.DD" }}</time></span>
+				<ul class="post-meta">
+					{{#foreach tags }}
+					<li>{{ name }}</li>
+					{{/foreach}}
+				</ul>
 				<h2 class="post-title" itemprop="headline">{{{ title }}}</h2>
 			</header>
 		</article>

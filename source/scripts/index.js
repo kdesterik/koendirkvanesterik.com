@@ -1,7 +1,10 @@
 'use strict';
 
-var $ = global.$ = require( 'jquery' );
-var jQuery = global.jQuery = require( 'jquery' );
+var $ 			= global.$ = require( 'jquery' );
+var jQuery 		= global.jQuery = require( 'jquery' );
+
+var isIOS 		= /iPad|iPhone|iPod/i.test( navigator.userAgent );
+var isAndroid 	= /Android/i.test( navigator.userAgent );
 
 
 function switchAssets( direction ){
@@ -23,22 +26,27 @@ function switchAssets( direction ){
 
 
 function getPostImage( id ){
+
 	return $( '.site-background' ).find( '[ data-target="' + id + '" ]' );
 }
 
 
 $( '.post-link' ).mouseover( function(){
-	switchAssets( 'off' );
-	if( !$( this ).siblings().hasClass( 'off' )){ $( this ).siblings().addClass( 'off' ); }
-	var $postImage = getPostImage( $( this ).attr( 'id' ));
-	if( !$postImage.hasClass( 'active' )){ $postImage.addClass( 'active' ); }
+	if( !isIOS && !isAndroid ){
+		switchAssets( 'off' );
+		if( !$( this ).siblings().hasClass( 'off' )){ $( this ).siblings().addClass( 'off' ); }
+		var $postImage = getPostImage( $( this ).attr( 'id' ));
+		if( !$postImage.hasClass( 'active' )){ $postImage.addClass( 'active' ); }
+	}
 });
 
 
 $( '.post-link' ).mouseout( function(){
-	switchAssets();
-	if( $( this ).siblings().hasClass( 'off' )){ $( this ).siblings().removeClass( 'off' ); }
-	var $postImage = getPostImage( $( this ).attr( 'id' ));
-	if( $postImage.hasClass( 'active' )){ $postImage.removeClass( 'active' ); }
+	if( !isIOS && !isAndroid ){
+		switchAssets();
+		if( $( this ).siblings().hasClass( 'off' )){ $( this ).siblings().removeClass( 'off' ); }
+		var $postImage = getPostImage( $( this ).attr( 'id' ));
+		if( $postImage.hasClass( 'active' )){ $postImage.removeClass( 'active' ); }
+	}
 });
 
