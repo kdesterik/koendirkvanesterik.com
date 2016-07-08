@@ -5,7 +5,6 @@ var jQuery = global.jQuery = require( 'jquery' );
 
 
 function switchAssets( direction ){
-
 	var assets = [ $( '.site-header' ), $( '.site-footer' )];
 	switch( direction ){
 		case 'off':
@@ -29,7 +28,6 @@ function getPostImage( id ){
 
 
 $( '.post-link' ).mouseover( function(){
-
 	switchAssets( 'off' );
 	if( !$( this ).siblings().hasClass( 'off' )){ $( this ).siblings().addClass( 'off' ); }
 	var $postImage = getPostImage( $( this ).attr( 'id' ));
@@ -38,7 +36,6 @@ $( '.post-link' ).mouseover( function(){
 
 
 $( '.post-link' ).mouseout( function(){
-
 	switchAssets();
 	if( $( this ).siblings().hasClass( 'off' )){ $( this ).siblings().removeClass( 'off' ); }
 	var $postImage = getPostImage( $( this ).attr( 'id' ));

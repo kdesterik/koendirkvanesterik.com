@@ -82,15 +82,15 @@ gulp.task( 'default', [ 'style', 'libs', 'scripts' ], function(){
 
 
 
-var ssh = new SSH({
-	'ignoreErrors': false,
-	'sshConfig': {
-		'host': '146.185.166.164',
-		'port': 22,
-		'username': 'root',
-		'privateKey': fs.readFileSync( '/Users/kdesterik/.ssh/id_rsa' )
-	}
-});
+// var ssh = new SSH({
+// 	'ignoreErrors': false,
+// 	'sshConfig': {
+// 		'host': '146.185.166.164',
+// 		'port': 22,
+// 		'username': 'root',
+// 		'privateKey': fs.readFileSync( '/Users/kdesterik/.ssh/id_rsa' )
+// 	}
+// });
 
 // gulp.task( 'deploy', function(){
 // 	return gulp.src([
@@ -114,7 +114,7 @@ var ssh = new SSH({
 
 
 
-gulp.task('deploy', function() {
+gulp.task('deploy', function(){
 	return gulp.src([
 		'assets/css/*.css',
 		'assets/images/*.{gif,jpg,png,svg}',
