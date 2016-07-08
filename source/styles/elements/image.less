@@ -9,7 +9,6 @@ img {
 }
 
 .fullscreen {
-
 	height: 200%;
 	left: -50%;
 	position: absolute;
@@ -17,7 +16,6 @@ img {
 	width: 200%;
 
 	img {
-
 		bottom: 0;
 		left: 0;
 		margin: auto;
@@ -33,7 +31,6 @@ img {
 
 
 .desktop, .laptop, .tablet, .mobile {
-
 	display: none;
 
 	&:before {
@@ -49,7 +46,6 @@ img {
 }
 
 .desktop, .laptop {
-
 	&:before {
 		border-width: 40px 40px 0 100px;
 		border-image: url( '../images/browser-chrome.svg' ) 40 40 0 100;
@@ -86,7 +82,6 @@ img {
 }
 
 .tablet, .mobile {
-
 	&:after {
 		border-style: solid;
 		content: "";
@@ -96,7 +91,6 @@ img {
 }
 
 .tablet {
-
 	&:before {
 		border-width: 60px 0 0 0;
 		border-image: url( '../images/tablet-chrome-top.svg' ) 60 0 0 0;
@@ -119,7 +113,6 @@ img {
 }
 
 .mobile {
-
 	&:before {
 		border-width: 50px 0 0 0;
 		border-image: url( '../images/mobile-chrome-top.svg' ) 50 0 0 0;
@@ -142,13 +135,31 @@ img {
 }
 
 .b-lazy {
-
 	opacity: 0.05;
-	.transition-default( 3 );
+	.transition-default( 1 );
 
 	&.b-loaded {
 
 		height: auto;
 		opacity: 1;
+	}
+}
+
+.swatch {
+	display: inline-block;
+	margin-bottom: @golden-ratio + 0em;
+
+	.color {
+		border-bottom-right-radius: @golden-ratio + 0em;
+		border-top-left-radius: @golden-ratio + 0em;
+		border-top-right-radius: @golden-ratio + 0em;
+		height: 230px;
+		width: 230px;
+	}
+
+	.code {
+		color: @gray-dark;
+		margin-left: @golden-ratio + 0em;
+    	margin-top: -( @golden-ratio * 1.5 ) + 0em;
 	}
 }

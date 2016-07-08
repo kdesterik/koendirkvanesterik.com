@@ -61,12 +61,19 @@ module.exports = function() {
 
 		var _ = require( 'lodash' );
 		var map = [{
-			from: /src/g,
-			to: 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src'
+			from: /src=".*?(fullscreen|desktop|laptop|tablet|mobile)"/g,
+			to: function( original ){
+				return 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-' + original
+			}
 		},{
-			from: /<img(.*?)(logo|fullscreen|desktop|laptop|tablet|mobile)(.*?)>/g,
-			to: function( match, i, original ){
-				return '<div class="' + original + '">' + match + '</div>';
+			from: /<img.*?(logo|fullscreen|desktop|laptop|tablet|mobile).*?>/g,
+			to: function( original, match ){
+				return '<div class="' + match + '">' + original + '</div>';
+			}
+		},{
+			from: /swatch\(\s?#?([0-9a-fA-F]*)\s?\);/g,
+			to: function( original, match ){
+				return '<div class="swatch"><div class="color" style="background-color:#' + match + ';"></div><div class="code">#' + match + '</div></div>';
 			}
 		}]
 
