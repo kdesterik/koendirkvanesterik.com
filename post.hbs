@@ -17,8 +17,8 @@
 <footer class="site-footer">
 	<ul>
 		<li><a href="{{ @blog.url }}">Index</a></li>
-		{{#prev_post}}<li><a href="{{ url }}">Next</a></li>{{/prev_post}}
 		{{#next_post}}<li><a href="{{ url }}">Previous</a></li>{{/next_post}}
+		{{#prev_post}}<li><a href="{{ url }}">Next</a></li>{{/prev_post}}
 	</ul>
 </footer>
 {{/post}}

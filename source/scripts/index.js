@@ -8,7 +8,6 @@ var isAndroid 	= /Android/i.test( navigator.userAgent );
 
 
 function switchAssets( direction ){
-
 	var assets = [ $( '.site-header' ), $( '.site-footer' )];
 	switch( direction ){
 		case 'off':
@@ -27,15 +26,13 @@ function switchAssets( direction ){
 
 
 function getPostImage( id ){
-	
+
 	return $( '.site-background' ).find( '[ data-target="' + id + '" ]' );
 }
 
 
 $( '.post-link' ).mouseover( function(){
-
 	if( !isIOS && !isAndroid ){
-
 		switchAssets( 'off' );
 		if( !$( this ).siblings().hasClass( 'off' )){ $( this ).siblings().addClass( 'off' ); }
 		var $postImage = getPostImage( $( this ).attr( 'id' ));
@@ -45,9 +42,7 @@ $( '.post-link' ).mouseover( function(){
 
 
 $( '.post-link' ).mouseout( function(){
-
 	if( !isIOS && !isAndroid ){
-
 		switchAssets();
 		if( $( this ).siblings().hasClass( 'off' )){ $( this ).siblings().removeClass( 'off' ); }
 		var $postImage = getPostImage( $( this ).attr( 'id' ));
