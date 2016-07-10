@@ -1,8 +1,8 @@
 /*
 * @Author: Koen Dirk van Esterik
 * @Date:	 2016-06-05 14:01:04
-* @Last Modified by:	 Koen Dirk van Esterik
-* @Last Modified time: 2016-06-08 23:35:42
+* @Last Modified by:   Koen Dirk van Esterik
+* @Last Modified time: 2016-07-08 18:49:45
 */
 
 'use strict';
@@ -61,19 +61,19 @@ module.exports = function() {
 
 		var _ = require( 'lodash' );
 		var map = [{
-			from: /src=".*?(fullscreen|desktop|laptop|tablet|mobile)"/g,
-			to: function( original ){
-				return 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-' + original
-			}
-		},{
-			from: /<img.*?(logo|fullscreen|desktop|laptop|tablet|mobile).*?>/g,
+			from: /<img src=".*?#(logo|fullscreen|desktop|laptop|tablet|mobile)" alt=".*?"\s?\/?>/g,
 			to: function( original, match ){
 				return '<div class="' + match + '">' + original + '</div>';
 			}
 		},{
-			from: /swatch\(\s?#?([0-9a-fA-F]*)\s?\);/g,
+			from: /<img src=".*?#swatch" alt="\s?#?([0-9a-fA-F]*)\s?"\s?\/?>/g,
 			to: function( original, match ){
 				return '<div class="swatch"><div class="color" style="background-color:#' + match + ';"></div><div class="code">#' + match + '</div></div>';
+			}
+		},{
+			from: /src=".*?#(desktop|laptop|tablet|mobile)"/g,
+			to: function( original ){
+				return 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-' + original
 			}
 		}]
 
@@ -97,7 +97,7 @@ module.exports = function() {
 	 * @return string
 	 */
 	handlebars.registerHelper( 'remove_slashes', function( str ){
-		
+
 		return str.replace( /^\/|\/$/g, '' );
 	});
 };

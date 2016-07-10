@@ -9,23 +9,13 @@ img {
 }
 
 .fullscreen {
-	height: 200%;
-	left: -50%;
-	position: absolute;
-	top: -50%;
-	width: 200%;
+	margin-left: -@golden-ratio + 0em;
+	margin-right: -@golden-ratio + 0em;
+	margin-top: -( @golden-ratio * 8 ) + 0em;
 
 	img {
-		bottom: 0;
-		left: 0;
-		margin: auto;
-		max-width: none;
-		min-width: 50%;
-		min-height: 50%;
-		position: absolute;
-		right: 0;
-		top: 0;
-		transform: none;
+		height: auto;
+		width: 100%;
 	}
 }
 
@@ -77,7 +67,7 @@ img {
 	}
 
 	@media screen and ( min-width: 1191px ) and ( max-width: 1814px ){
-		display: inline-block;	
+		display: inline-block;
 	}
 }
 
@@ -108,7 +98,7 @@ img {
 	}
 
 	@media screen and ( min-width: 694px ) and ( max-width: 1190px ){
-		display: inline-block;	
+		display: inline-block;
 	}
 }
 
@@ -130,7 +120,7 @@ img {
 	}
 
 	@media screen and ( max-width: 693px ){
-		display: inline-block;	
+		display: inline-block;
 	}
 }
 
