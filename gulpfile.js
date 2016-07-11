@@ -76,7 +76,7 @@ gulp.task( 'watch', function(){
 });
 
 
-gulp.task( 'default', [ 'style', 'libs', 'scripts' ], function(){
+gulp.task( 'default' ,[ 'style', 'libs', 'scripts' ], function(){
 	gulp.start( 'ghost', 'watch' );
 });
 
@@ -115,6 +115,7 @@ gulp.task( 'default', [ 'style', 'libs', 'scripts' ], function(){
 
 
 gulp.task('deploy', function(){
+
 	return gulp.src([
 		'assets/css/*.css',
 		'assets/images/*.{gif,jpg,png,svg}',
