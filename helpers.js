@@ -66,9 +66,9 @@ module.exports = function() {
 				return '<div class="' + second + '">' + first + '</div>';
 			}
 		},{
-			from: /<p><img src=".*?#swatch" alt="\s?#?([0-9a-fA-F]*)\s?"\s?\/?><\/p>/g,
-			to: function( original, match ){
-				return '<div class="swatch"><div class="color" style="background-color:#' + match + ';"></div><div class="code"><a href="http://www.0to255.com/' + match + '" target="_blank">#' + match + '</a></div></div>';
+			from: /<p><img src="http:\/\/placehold\.it\/[0-9]*x[0-9]*\/([0-9a-fA-F]*)\/?#swatch" alt="(.*?)"\s?\/?><\/p>/g,
+			to: function( original, first, second ){
+				return '<div class="swatch" style="background-color:#' + first + ';">' + second + '<br>#' + first + '</div>';
 			}
 		},{
 			from: /src=".*?#(desktop|laptop|tablet|mobile)"/g,

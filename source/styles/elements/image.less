@@ -5,16 +5,22 @@ img {
 }
 
 .logo, .fullscreen, .desktop, .laptop, .tablet, .mobile {
-	margin-bottom: 0;
+	img {
+		margin-bottom: 0;
+	}
 }
 
 .fullscreen {
 	margin-left: -@golden-ratio + 0em;
 	margin-right: -@golden-ratio + 0em;
 	margin-top: -( @golden-ratio * 8 ) + 0em;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
 
 	img {
 		height: auto;
+		position: absolute;
 		width: 100%;
 	}
 }
@@ -125,19 +131,14 @@ img {
 }
 
 .swatch {
+	color: @gray-light;
 	display: inline-block;
-	margin-bottom: @golden-ratio + 0em;
-
-	.color {
-		border-bottom-right-radius: @golden-ratio + 0em;
-		border-top-left-radius: @golden-ratio + 0em;
-		border-top-right-radius: @golden-ratio + 0em;
-		padding-bottom: 100%;
-		width: 232px;
-	}
-
+	margin-bottom: 11px;
+	padding: @golden-ratio + 0em @golden-ratio + 0em ( @golden-ratio * 7 ) + 0em;
+	width: 423px;
+	
 	.code {
-		color: @gray-dark;
+		
 		margin-left: @golden-ratio + 0em;
     	margin-top: -( @golden-ratio * 1.5 ) + 0em;
 	}
