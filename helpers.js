@@ -61,14 +61,19 @@ module.exports = function() {
 
 		var _ = require( 'lodash' );
 		var map = [{
-			from: /<p>(<img src=".*?#(logo|fullscreen|desktop|laptop|tablet|mobile)" alt=".*?"\s?\/?>)<\/p>/g,
-			to: function( original, first, second ){
-				return '<div class="' + second + '">' + first + '</div>';
+			from: /<p><img src="(.*?)#fullscreen" alt=".*?"\s?\/?><\/p>/g,
+			to: function( original, match ){
+				return '<div class="fullscreen" style="background-image: url(\'' + match + '\');"></div>';
 			}
 		},{
 			from: /<p><img src="http:\/\/placehold\.it\/[0-9]*x[0-9]*\/([0-9a-fA-F]*)\/?#swatch" alt="(.*?)"\s?\/?><\/p>/g,
 			to: function( original, first, second ){
 				return '<div class="swatch" style="background-color:#' + first + ';">' + second + '<br>#' + first + '</div>';
+			}
+		},{
+			from: /<p>(<img src=".*?#(desktop|laptop|tablet|mobile)" alt=".*?"\s?\/?>)<\/p>/g,
+			to: function( original, first, second ){
+				return '<div class="' + second + '">' + first + '</div>';
 			}
 		},{
 			from: /src=".*?#(desktop|laptop|tablet|mobile)"/g,

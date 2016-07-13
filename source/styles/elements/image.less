@@ -4,27 +4,26 @@ img {
 	margin-bottom: 3px;
 }
 
-.logo, .fullscreen, .desktop, .laptop, .tablet, .mobile {
+.desktop, .laptop, .tablet, .mobile {
 	img {
 		margin-bottom: 0;
 	}
 }
 
 .fullscreen {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin-left: -@golden-ratio + 0em;
 	margin-right: -@golden-ratio + 0em;
 	margin-top: -( @golden-ratio * 8 ) + 0em;
-	overflow: hidden;
 	padding-bottom: 56.25%;
-	position: relative;
 
-	img {
-		height: auto;
-		position: absolute;
-		width: 100%;
+	@media all and (orientation: portrait) {
+
+		padding-bottom: 175%;		
 	}
 }
-
 
 .desktop, .laptop, .tablet, .mobile {
 	display: none;
@@ -131,22 +130,19 @@ img {
 }
 
 .swatch {
+	box-sizing: border-box;
 	color: @gray-light;
 	display: inline-block;
 	margin-bottom: 11px;
+	max-width: 475px;
 	padding: @golden-ratio + 0em @golden-ratio + 0em ( @golden-ratio * 7 ) + 0em;
-	width: 423px;
+	width: 100%;
 	
 	.code {
 		
 		margin-left: @golden-ratio + 0em;
     	margin-top: -( @golden-ratio * 1.5 ) + 0em;
 	}
-}
-
-.logo {
-	height: 52px;
-	width: auto;
 }
 
 .b-lazy {
