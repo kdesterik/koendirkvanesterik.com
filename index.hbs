@@ -12,18 +12,16 @@
 
 <main class="content" role="main">
 	{{#foreach posts }}
-	<a id="{{ remove_slashes url }}" class="post-link" href="{{ url }}" rel="bookmark">
-		<article class="{{ post_class }}" role="article" itemscope itemtype="http://schema.org/Article">
-			<header class="post-header">
-				<ul class="post-meta">
-					{{#foreach tags }}
-					<li>{{ name }}</li>
-					{{/foreach}}
-				</ul>
-				<h2 class="post-title" itemprop="headline">{{{ title }}}</h2>
-			</header>
-		</article>
-	</a>
+	<article class="{{ post_class }}" role="article" itemscope itemtype="http://schema.org/Article">
+		<header class="post-header">
+			<ul class="post-meta">
+				{{#foreach tags }}
+				<li>{{ name }}</li>
+				{{/foreach}}
+			</ul>
+			<h2 class="post-title" itemprop="headline"><a id="{{ remove_slashes url }}" class="post-link" href="{{ url }}" rel="bookmark">{{{ title }}}</a></h2>
+		</header>
+	</article>
 	{{/foreach}}
 </main>
 
