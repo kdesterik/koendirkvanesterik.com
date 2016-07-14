@@ -9,10 +9,6 @@
 			.paragraph();
 		}
 	}
-
-	.site-footer {
-		min-height: ( @golden-ratio * 5 ) + 0em;
-	}
 }
 
 .post-content {
@@ -22,7 +18,7 @@
 
 	p {
 		max-width: @readable-width;
-		margin-bottom: ( @golden-ratio * 5 ) + 0em;
+		margin-bottom: @golden-ratio + 0em;
 		margin-top: ( @golden-ratio * 5 ) + 0em;
 
 		strong {
@@ -32,6 +28,10 @@
 		}
 	}
 
+	p + p {
+		margin-top: @golden-ratio + 0em;
+	}
+
 	hr {
 		border-color: transparent;
 		margin-bottom: ( @golden-ratio * 2 ) + 0em;
@@ -39,6 +39,7 @@
 	}
 
 	p + hr {
+		margin-top: ( @golden-ratio * 5 ) + 0em;
 		margin-bottom: 0;
 	}
 
