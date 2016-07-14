@@ -24,29 +24,29 @@ module.exports = function() {
 
 		switch( operator ){
 			case '==':
-					return ( v1 == v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 == v2 )	? options.fn( this ) : options.inverse( this );
 			case '===':
-					return ( v1 === v2 ) ? options.fn( this ) : options.inverse( this );
+				return ( v1 === v2 ) ? options.fn( this ) : options.inverse( this );
 			case '!=':
-					return ( v1 != v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 != v2 )	? options.fn( this ) : options.inverse( this );
 			case '!==':
-					return ( v1 !== v2 ) ? options.fn( this ) : options.inverse( this );
+				return ( v1 !== v2 ) ? options.fn( this ) : options.inverse( this );
 			case '<':
-					return ( v1 < v2 )	 ? options.fn( this ) : options.inverse( this );
+				return ( v1 < v2 )	 ? options.fn( this ) : options.inverse( this );
 			case '<=':
-					return ( v1 <= v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 <= v2 )	? options.fn( this ) : options.inverse( this );
 			case '>':
-					return ( v1 > v2 )	 ? options.fn( this ) : options.inverse( this );
+				return ( v1 > v2 )	 ? options.fn( this ) : options.inverse( this );
 			case '>=':
-					return ( v1 >= v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 >= v2 )	? options.fn( this ) : options.inverse( this );
 			case '&&':
-					return ( v1 && v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 && v2 )	? options.fn( this ) : options.inverse( this );
 			case '||':
-					return ( v1 || v2 )	? options.fn( this ) : options.inverse( this );
+				return ( v1 || v2 )	? options.fn( this ) : options.inverse( this );
 			case 'typeof':
-					return ( typeof v1 == v2 )	? options.fn( this ) : options.inverse( this );
+				return ( typeof v1 == v2 )	? options.fn( this ) : options.inverse( this );
 			default:
-					return options.inverse( this );
+				return options.inverse( this );
 		}
 	});
 
@@ -63,12 +63,13 @@ module.exports = function() {
 		var map = [{
 			from: /<p><img src="(.*?)#fullscreen" alt=".*?"\s?\/?><\/p>/g,
 			to: function( original, match ){
-				return '<div class="fullscreen" style="background-image: url(\'' + match + '\');"></div>';
+				return '<div class="fullscreen b-lazy" data-src="' + match + '"></div>';
 			}
 		},{
 			from: /<p><img src="http:\/\/placehold\.it\/[0-9]*x[0-9]*\/([0-9a-fA-F]*)\/?#swatch" alt="(.*?)"\s?\/?><\/p>/g,
 			to: function( original, first, second ){
-				return '<div class="swatch" style="background-color:#' + first + ';">' + second + '<br>#' + first + '</div>';
+				var slug = second.toLowerCase().replace( /[^\w\s-]/g, '' ).replace( /[\s_-]+/g, '-' ).replace( /^-+|-+$/g, '' );
+				return '<div class="swatch ' + slug + '" style="background-color:#' + first + ';">' + second + '<br>#' + first + '</div>';
 			}
 		},{
 			from: /<p>(<img src=".*?#(desktop|laptop|tablet|mobile)" alt=".*?"\s?\/?>)<\/p>/g,
@@ -99,7 +100,6 @@ module.exports = function() {
 	});
 
 
-
 	/**
 	 * {{remove_slashes}} remove tralings slashes within str
 	 *
@@ -107,7 +107,6 @@ module.exports = function() {
 	 * @return string
 	 */
 	handlebars.registerHelper( 'remove_slashes', function( str ){
-
 		return str.replace( /^\/|\/$/g, '' );
 	});
 };

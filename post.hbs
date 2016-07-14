@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#post}}
-<header class="site-header">
+<header class="site-header {{ remove_slashes url }}">
 	<p class="site-title"><a href="{{ @blog.url }}">{{ @blog.title }}</a></p>
 	<h1 class="post-title" itemprop="headline">{{ title }}</h1>
 </header>
@@ -16,9 +16,9 @@
 
 <footer class="site-footer">
 	<ul>
-		<li><a href="{{ @blog.url }}">Index</a></li>
-		{{#next_post}}<li><a href="{{ url }}">Previous</a></li>{{/next_post}}
-		{{#prev_post}}<li><a href="{{ url }}">Next</a></li>{{/prev_post}}
+		<li><a href="{{ @blog.url }}" class="post-index">Index</a></li>
+		{{#next_post}}<li><a href="{{ url }}" class="post-previous">Previous</a></li>{{/next_post}}
+		{{#prev_post}}<li><a href="{{ url }}" class="post-next">Next</a></li>{{/prev_post}}
 	</ul>
 </footer>
 {{/post}}
