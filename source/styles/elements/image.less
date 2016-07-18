@@ -17,11 +17,10 @@ img {
 	margin-left: -@golden-ratio + 0em;
 	margin-right: -@golden-ratio + 0em;
 	margin-top: -( @golden-ratio * 8 ) + 0em;
-	padding-bottom: 56.25%;
+	padding-bottom: 60%;
 
-	@media all and (orientation: portrait) {
-
-		padding-bottom: 175%;		
+	@media all and ( orientation: portrait ) {
+		padding-bottom: 175%;
 	}
 }
 
@@ -43,7 +42,7 @@ img {
 .desktop, .laptop {
 	&:before {
 		border-width: 40px 40px 0 100px;
-		border-image: url( '../images/browser-chrome.svg' ) 40 40 0 100;
+		border-image: url( '../images/browser-chrome.svg' ) 40 40 0 100 fill repeat;
 	}
 
 	img {
@@ -55,10 +54,7 @@ img {
 }
 
 .desktop {
-	img {
-		height: 984px;
-		width: 1748px;
-	}
+	width: 1748px;
 
 	@media screen and ( min-width: 1815px ){
 		display: inline-block;
@@ -66,10 +62,7 @@ img {
 }
 
 .laptop {
-	img {
-		height: 632px;
-		width: 1124px;
-	}
+	width: 1124px;
 
 	@media screen and ( min-width: 1191px ) and ( max-width: 1814px ){
 		display: inline-block;
@@ -86,6 +79,8 @@ img {
 }
 
 .tablet {
+	width: 627px;
+
 	&:before {
 		border-width: 60px 0 0 0;
 		border-image: url( '../images/tablet-chrome-top.svg' ) 60 0 0 0;
@@ -98,8 +93,6 @@ img {
 
 	img {
 		border-radius: 0.25em;
-		height: 700px;
-		width: 627px;
 	}
 
 	@media screen and ( min-width: 694px ) and ( max-width: 1190px ){
@@ -108,6 +101,8 @@ img {
 }
 
 .mobile {
+	width: 230px;
+
 	&:before {
 		border-width: 50px 0 0 0;
 		border-image: url( '../images/mobile-chrome-top.svg' ) 50 0 0 0;
@@ -120,8 +115,6 @@ img {
 
 	img {
 		border-radius: 0.25em;
-		height: 300px;
-		width: 230px;
 	}
 
 	@media screen and ( max-width: 693px ){
@@ -137,9 +130,9 @@ img {
 	max-width: 475px;
 	padding: @golden-ratio + 0em @golden-ratio + 0em ( @golden-ratio * 7 ) + 0em;
 	width: 100%;
-	
+
 	.code {
-		
+
 		margin-left: @golden-ratio + 0em;
     	margin-top: -( @golden-ratio * 1.5 ) + 0em;
 	}

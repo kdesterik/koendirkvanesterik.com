@@ -2,7 +2,7 @@
 * @Author: Koen Dirk van Esterik
 * @Date:	 2016-06-05 14:01:04
 * @Last Modified by:   Koen Dirk van Esterik
-* @Last Modified time: 2016-07-08 18:49:45
+* @Last Modified time: 2016-07-18 15:53:41
 */
 
 'use strict';
@@ -78,8 +78,8 @@ module.exports = function() {
 			}
 		},{
 			from: /src=".*?#(desktop|laptop|tablet|mobile)"/g,
-			to: function( original ){
-				return 'class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-' + original
+			to: function( original, match ){
+				return 'class="b-lazy" src="../assets/images/' + match + '-placeholder.svg" data-' + original
 			}
 		},{
 			from: /<p>(<img src=".*?" alt=".*?"\s?\/?>)<\/p>/g,
