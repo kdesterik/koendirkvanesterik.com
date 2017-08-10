@@ -1,0 +1,36 @@
+// Colors
+//
+// Grayscale and brand colors for use across application.
+
+$white:                 #fff;
+$black:                 #000;
+
+$base:                  $white;
+$light:                 darken($base, 15%);
+$lighter:               darken($base, 6%);
+$lightest:              darken($base, 3%);
+
+$dribbble:              #e84d88;
+$facebook:              #3e5b98;
+$linkedin:              #3371b7;
+$pinterest:             #c92619;
+$skype:                 #28abe3;
+$twitter:               #4da7de;
+$whatsapp:              #20b038;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-size-base:        16px;
+$font-size-small:       .75em;
+$line-height-base:      1.75em;
+$letter-spacing-base:   1px;
+
+
+// Other
+//
+//
+
+$opacity-base:          .65;

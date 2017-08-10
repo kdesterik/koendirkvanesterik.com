@@ -1,0 +1,12 @@
+// Globals
+@import '../../core/styles/variables';
+
+.overview {
+  padding: ( $line-height-base * 7 ) 0 0;
+}
+
+.card {
+  background-color: $light;
+  width: 100%;
+  padding-bottom: 100%;
+}

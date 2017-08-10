@@ -1,0 +1,36 @@
+#!/bin/bash
+
+ERROR="Error. Please make sure you've indicated correct parameters"
+DRY_RUN="Running dry-run"
+DEPLOYMENT="Running actual deployment"
+
+if [ $# -eq 0 ]
+    then
+        echo "$ERROR";
+  elif [ "$1" == "front-end" ]
+    then
+        if [[ -z "$2" ]]
+            then
+                echo "$DRY_RUN"
+                rsync --dry-run -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./build/ koendirkvanesterik@188.226.131.43:/var/www/html
+        elif [ "$2" == "production" ]
+            then
+                echo "$DEPLOYMENT"
+                rsync -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./build/ koendirkvanesterik@188.226.131.43:/var/www/html
+        else
+            echo "$ERROR";
+        fi
+  elif [ "$1" == "back-end" ]
+    then
+        if [[ -z "$2" ]]
+            then
+                echo "$DRY_RUN"
+                rsync --dry-run -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./data/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/data/wp-content/themes/koendirkvanesterik
+        elif [ "$2" == "production" ]
+            then
+                echo "$DEPLOYMENT"
+                rsync -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./data/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/data/wp-content/themes/koendirkvanesterik
+        else
+            echo "$ERROR";
+        fi
+fi

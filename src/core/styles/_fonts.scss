@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Gridnik';
+  src: url('../../fonts/gridnik-bold.eot');
+  src: url('../../fonts/gridnik-bold.eot?#iefix') format('embedded-opentype'),
+     url('../../fonts/gridnik-bold.woff') format('woff'),
+     url('../../fonts/gridnik-bold.ttf') format('truetype'),
+     url('../../fonts/gridnik-bold.svg#NGridnikMM-Medium') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gridnik';
+  src: url('../../fonts/gridnik-regular.eot');
+  src: url('../../fonts/gridnik-regular.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/gridnik-regular.woff') format('woff'),
+    url('../../fonts/gridnik-regular.ttf') format('truetype'),
+    url('../../fonts/gridnik-regular.svg#GridnikMM-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gridnik';
+  src: url('../../fonts/gridnik-light.eot');
+  src: url('../../fonts/gridnik-light.eot?#iefix') format('embedded-opentype'),
+   url('../../fonts/gridnik-light.woff') format('woff'),
+   url('../../fonts/gridnik-light.ttf') format('truetype'),
+   url('../../fonts/gridnik-light.svg#GridnikMM-Regular') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}

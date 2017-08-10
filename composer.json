@@ -1,0 +1,27 @@
+{
+    "name": "koendirkvanesterik/koendirkvanesterik.com",
+    "description": "Portfolio website of Koen Dirk van Esterik",
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress": "4.8.1",
+        "wp-sync-db/wp-sync-db": "dev-master"
+    },
+    "config": {
+        "vendor-dir": "./data/wp-content/plugins/"
+    },
+    "extra": {
+        "wordpress-install-dir": "./data/wp/",
+        "installer-paths": {
+            "./data/wp-content/plugins/{$name}": [
+                "wp-sync-db/wp-sync-db"
+            ]
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Koen Dirk van Esterik",
+            "email": "info@koendirkvanesterik.com"
+        }
+    ]
+}

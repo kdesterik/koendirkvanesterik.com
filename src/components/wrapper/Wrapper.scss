@@ -1,0 +1,14 @@
+// Globals
+@import '../../core/styles/variables';
+
+// Elements
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  .container {
+    padding: 0 1rem;
+  }
+}

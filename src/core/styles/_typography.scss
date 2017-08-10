@@ -1,0 +1,33 @@
+// Typography
+//
+// Typography for body text, headings, and more.
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $line-height-base;
+}
+
+p {
+  margin: 0 0 $line-height-base;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: $opacity-base;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.centered {
+  text-align: center;
+}
