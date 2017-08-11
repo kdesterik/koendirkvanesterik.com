@@ -68,23 +68,11 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 /**
- * Custom REST Api Endpoints
+ * Custom REST Routes
  */
 require get_template_directory() . '/inc/rest-api.php';
-
-
-/**
- * Get page content by slug
- */
-function the_posts( $args ){
-
-	query_posts( $args );
-	while ( have_posts() ){
-		the_post();
-		get_template_part( 'template-parts/content', get_post_format() );		
-	}
-  wp_reset_query();
-}
+require get_template_directory() . '/routes/portfolio.php';
+require get_template_directory() . '/routes/footer.php';
 
 
 /**
@@ -93,16 +81,15 @@ function the_posts( $args ){
 function koendirkvanesterik_change_post_label() {
   global $menu;
   global $submenu;
-  $menu[5][0] 				= 'Projects';
+  $menu[5][0] 				        = 'Projects';
   $submenu['edit.php'][5][0] 	= 'Projects';
   $submenu['edit.php'][10][0] = 'Add Project';
-  echo '';
 }
 add_action( 'admin_menu', 'koendirkvanesterik_change_post_label' );
 
 function koendirkvanesterik_change_post_object() {
   global $wp_post_types;
-  $labels 										= &$wp_post_types['post']->labels;
+  $labels 										= $wp_post_types['post']->labels;
   $labels->name 							= 'Projects';
   $labels->singular_name 			= 'Project';
   $labels->add_new 						= 'Add Project';

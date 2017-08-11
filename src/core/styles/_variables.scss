@@ -10,6 +10,8 @@ $light:                 darken($base, 15%);
 $lighter:               darken($base, 6%);
 $lightest:              darken($base, 3%);
 
+// Social media colors
+
 $dribbble:              #e84d88;
 $facebook:              #3e5b98;
 $linkedin:              #3371b7;
@@ -22,11 +24,31 @@ $whatsapp:              #20b038;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-
+$font-family-base:      'Gridnik', 'Lucida Console', Monaco, monospace;
 $font-size-base:        16px;
 $font-size-small:       .75em;
 $line-height-base:      1.75em;
 $letter-spacing-base:   1px;
+
+$headings-font-family:  $font-family-base;
+$headings-font-weight:  200;
+$headings-line-height:  .9333333333em;
+
+$font-size-h1:          5.625em;
+$font-size-h2:          5.625em;
+$font-size-h3:          3.75em;
+$font-size-h4:          3em;
+$font-size-h5:          3em;
+$font-size-h6:          3em;
+
+
+// Links
+//
+//
+
+$link-color:            $black;
+$link-hover-color:      #f71568;
+$link-hover-decoration: none;
 
 
 // Other

@@ -1,4 +1,3 @@
-// Header
 import React, { Component } from 'react';
 import Snippets from '../../core/scripts/Snippets';
 import './Header.css';
@@ -17,7 +16,7 @@ class Header extends Component {
                             col-sm-offset-2
                             col-sm-8
                             col-xs-12">
-              <h1 className="site-title">{ Snippets.name }</h1>
+              <h1 className="title">{ Snippets.name }</h1>
             </div>
           </div>
         </div>

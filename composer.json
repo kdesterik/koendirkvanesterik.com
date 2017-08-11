@@ -2,18 +2,29 @@
     "name": "koendirkvanesterik/koendirkvanesterik.com",
     "description": "Portfolio website of Koen Dirk van Esterik",
     "type": "project",
+    "repositories": [
+        {
+            "type":"composer",
+            "url":"http://wpackagist.org"
+        }
+    ],
     "require": {
         "johnpbloch/wordpress": "4.8.1",
-        "wp-sync-db/wp-sync-db": "dev-master"
+        "wp-sync-db/wp-sync-db": "dev-master",
+        "wpackagist-plugin/display-posts-shortcode": "2.8.0",
+        "wpackagist-plugin/disable-comments": "1.7"
     },
     "config": {
+        "secure-http": false,
         "vendor-dir": "./data/wp-content/plugins/"
     },
     "extra": {
         "wordpress-install-dir": "./data/wp/",
         "installer-paths": {
             "./data/wp-content/plugins/{$name}": [
-                "wp-sync-db/wp-sync-db"
+                "wp-sync-db/wp-sync-db",
+                "wpackagist-plugin/display-posts-shortcode",
+                "wpackagist-plugin/disable-comments"
             ]
         }
     },
