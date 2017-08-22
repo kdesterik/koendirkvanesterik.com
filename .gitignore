@@ -5,6 +5,7 @@ node_modules/
 
 # data
 .access
+composer.lock
 data/wp/
 data/wp-content/plugins/
 
