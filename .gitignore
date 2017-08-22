@@ -4,6 +4,7 @@
 node_modules/
 
 # data
+.access
 data/wp/
 data/wp-content/plugins/
 
