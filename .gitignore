@@ -6,6 +6,7 @@ node_modules/
 # data
 data/wp/
 data/wp-content/plugins/
+data/wp-config.php
 
 # production
 build/
