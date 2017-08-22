@@ -1,0 +1,64 @@
+.channels {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.socicon {
+
+  color: $black;
+  margin-right: $line-height-base / 1.25;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &-dribbble {
+    &:hover {
+      color: $dribbble;
+    }
+  }
+
+  &-facebook {
+    &:hover {
+      color: $facebook;
+    }
+  }
+
+  &-linkedin {
+    &:hover {
+      color: $linkedin;
+    }
+  }
+
+  &-pinterest {
+    &:hover {
+      color: $pinterest;
+    }
+  }
+
+  &-skype {
+    &:hover {
+      color: $skype;
+    }
+  }
+
+  &-twitter {
+    &:hover {
+      color: $twitter;
+    }
+  }
+
+  &-whatsapp {
+    &:hover {
+      color: $whatsapp;
+    }
+  }
+}

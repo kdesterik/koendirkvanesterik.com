@@ -28,6 +28,8 @@ get_header(); ?>
 			<?php
 			endif;
 
+			get_page_content_by_slug( 'Intro' );
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -39,6 +41,8 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
+
+			get_page_content_by_slug( 'Profile' );
 
 			the_posts_navigation();
 

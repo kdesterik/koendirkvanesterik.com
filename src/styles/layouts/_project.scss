@@ -1,0 +1,147 @@
+.project {
+
+  .desktop {
+
+    $opacity: .03;
+
+    border-bottom: 1px solid rgba($black, $opacity);
+    border-left: 1px solid rgba($black, $opacity);
+    border-radius: ($line-height-base / 4)
+                   ($line-height-base / 4)
+                   $line-height-base
+                   $line-height-base;
+    border-right: 1px solid  rgba($black, $opacity);
+    border-top: $line-height-base solid rgba($black, $opacity);
+  }
+}
+
+.project-footer {
+  font-size: $font-size-small;
+  text-transform: uppercase;
+
+  a {
+    font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+
+  .arrow-back {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    color: transparent;
+    height: $line-height-base;
+    // line-height: 1.5em;
+    position: absolute;
+    white-space: nowrap;
+    width: $line-height-base * 2;
+
+    &::before,
+    &::after {
+      background-color: $black;
+      content: '';
+      height: ($line-height-base / 2);
+      left: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    &::before {
+      top: ($line-height-base / 2);
+      transform: rotate(45deg);
+      transform-origin: bottom;
+    }
+
+    &::after {
+      top: $line-height-base;
+      transform: rotate(-45deg);
+      transform-origin: top;
+    }
+
+    &:hover {
+      border-color: transparent;
+
+      &::before,
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .arrow-left,
+  .arrow-right {
+    background-color: $black;
+    color: transparent;
+    height: 1px;
+    line-height: 0;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    width: $line-height-base * 2;
+
+    &::before,
+    &::after {
+      background-color: $black;
+      content: '';
+      height: ($line-height-base / 2);
+      position: absolute;
+      width: 1px;
+    }
+
+    &::before {
+      top: -(($line-height-base / 2) - .0625em);
+      transform-origin: bottom;
+    }
+
+    &::after {
+      top: 1px;
+      transform-origin: top;
+    }
+
+    &:hover {
+      background-color: transparent;
+      width: auto;
+
+      &::before,
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .arrow-left {
+    left: ($line-height-base * 2);
+
+    &::before,
+    &::after {
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .arrow-right {
+    right: ($line-height-base * 2);
+    text-indent: -($line-height-base * 4);
+
+    &::before,
+    &::after {
+      right: 0;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Body reset
+
+html {
+  // font-size: 10px;
+  -webkit-tap-highlight-color: fade($black, 0);
+}
+
+body {
+  background-color: $white;
+  color: $black;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  letter-spacing: $letter-spacing-base;
+  line-height: $line-height-base;
+}
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: $link-hover-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+// Images
+
+img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+// Tables
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+
+  tr {
+    td {
+      padding: 0;
+    }
+
+    td:last-child {
+      text-align: right;
+    }
+  }
+}
+
+
+// Flexboxgrid
+//
+// Minor adjustment to have container align properly on small screens
+
+.container {
+
+  padding: 0 1rem;
+}

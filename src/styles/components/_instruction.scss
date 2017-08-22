@@ -1,0 +1,49 @@
+.instruction {
+
+  margin-top: $line-height-base;
+
+  .scroll-down {
+
+    border: 2px solid $black;
+    border-radius: 13px;
+    box-sizing: border-box;
+    height: 40px;
+    position: relative;
+    width: 26px;
+
+    span {
+      animation: frames linear 2s;
+      animation-iteration-count: infinite;
+      background-color: $black;
+      border-radius: 100%;
+      height: 4px;
+      left: 9px;
+      position: absolute;
+      top: 2px;
+      width: 4px;
+    }
+
+    @keyframes frames{
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      40% {
+        opacity: 1;
+        transform: translateY(12px);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translateY(18px);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+    }
+
+  }
+}

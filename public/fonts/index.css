@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Gridnik';
+  src: url('./gridnik-bold.eot');
+  src: url('./gridnik-bold.eot?#iefix') format('embedded-opentype'),
+     url('./gridnik-bold.woff') format('woff'),
+     url('./gridnik-bold.ttf') format('truetype'),
+     url('./gridnik-bold.svg#NGridnikMM-Medium') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gridnik';
+  src: url('./gridnik-regular.eot');
+  src: url('./gridnik-regular.eot?#iefix') format('embedded-opentype'),
+    url('./gridnik-regular.woff') format('woff'),
+    url('./gridnik-regular.ttf') format('truetype'),
+    url('./gridnik-regular.svg#GridnikMM-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gridnik';
+  src: url('./gridnik-light.eot');
+  src: url('./gridnik-light.eot?#iefix') format('embedded-opentype'),
+   url('./gridnik-light.woff') format('woff'),
+   url('./gridnik-light.ttf') format('truetype'),
+   url('./gridnik-light.svg#GridnikMM-Regular') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}

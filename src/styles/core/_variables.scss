@@ -1,0 +1,48 @@
+// Colors
+//
+// Grayscale and brand colors for use across application.
+
+$white:                 #fff;
+$black:                 #000;
+
+// Social media colors
+
+$dribbble:              #e84d88;
+$facebook:              #3e5b98;
+$linkedin:              #3371b7;
+$pinterest:             #c92619;
+$skype:                 #28abe3;
+$twitter:               #4da7de;
+$whatsapp:              #20b038;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-base:      'Gridnik', 'Lucida Console', Monaco, monospace;
+$font-size-base:        16px;
+$font-size-small:       .75em;
+$line-height-base:      1.75em;
+$letter-spacing-base:   1px;
+
+$headings-font-family:  $font-family-base;
+
+$font-size-h1:          $font-size-small;
+$font-size-h2:          5.625em;
+$font-size-h3:          $font-size-small;
+
+
+// Links
+//
+//
+
+$link-color:            $black;
+$link-hover-color:      #fed43b;
+$link-hover-decoration: none;
+
+
+// Other
+//
+//
+
+$opacity-base:          .65;

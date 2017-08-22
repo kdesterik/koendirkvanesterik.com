@@ -68,11 +68,33 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 /**
+ * Allow SVG uploads to media library
+ */
+function koendirkvanesterik_mime_types( $mimes ){
+
+  $mimes[ 'svg' ] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'koendirkvanesterik_mime_types' );
+
+
+/**
+ * Add raw content to datatype post
+ */
+
+function koendirkvanesterik_add_raw_post_content( $data, $post, $request ) {
+
+    $data->data[ 'content' ][ 'raw' ] = $post->post_content;
+    return $data;
+}
+add_filter( 'rest_prepare_post', 'koendirkvanesterik_add_raw_post_content', 10, 3 );
+
+
+/**
  * Custom REST Routes
  */
-require get_template_directory() . '/inc/rest-api.php';
-require get_template_directory() . '/routes/portfolio.php';
-require get_template_directory() . '/routes/footer.php';
+require get_template_directory() . '/routes/channels.php';
+require get_template_directory() . '/routes/colophon.php';
 
 
 /**
@@ -105,3 +127,22 @@ function koendirkvanesterik_change_post_object() {
   $labels->name_admin_bar 		= 'Projects';
 }
 add_action( 'init', 'koendirkvanesterik_change_post_object' );
+
+
+/**
+ * Get and style content of page by slug 
+ */
+function get_page_content_by_slug( $slug ){
+
+  $page = get_page_by_path( $slug );
+  echo apply_filters( 'the_content', $page->post_content );
+}
+
+
+/**
+ * Adjust exceprt length to <number>
+ */
+function koendirkvanesterik_excerpt_length( $length ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'koendirkvanesterik_excerpt_length', 999 );

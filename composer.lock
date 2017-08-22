@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf8463d0432be7cf2e1806d0e094636e",
+    "content-hash": "753170f3dcaac28a89bc67b697583f44",
     "packages": [
         {
             "name": "composer/installers",
@@ -105,6 +105,71 @@
                 "zikula"
             ],
             "time": "2016-04-13T19:46:30+00:00"
+        },
+        {
+            "name": "deliciousbrains/wp-amazon-s3-and-cloudfront",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deliciousbrains/wp-amazon-s3-and-cloudfront.git",
+                "reference": "761e98dad46938e58cf36a85fb536f146a7fe9ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deliciousbrains/wp-amazon-s3-and-cloudfront/zipball/761e98dad46938e58cf36a85fb536f146a7fe9ea",
+                "reference": "761e98dad46938e58cf36a85fb536f146a7fe9ea",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0.6"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "description": "Automatically copies media uploads to Amazon S3 for delivery. Optionally configure Amazon CloudFront for even faster delivery.",
+            "homepage": "https://github.com/deliciousbrains/wp-amazon-s3-and-cloudfront",
+            "keywords": [
+                "amazon-web-services",
+                "cdn",
+                "cloudfront",
+                "plugin",
+                "s3"
+            ],
+            "time": "2017-06-19T14:14:49+00:00"
+        },
+        {
+            "name": "deliciousbrains/wp-amazon-web-services",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deliciousbrains/wp-amazon-web-services.git",
+                "reference": "297cb203b7e640253323a4322721f7e1f0f924d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deliciousbrains/wp-amazon-web-services/zipball/297cb203b7e640253323a4322721f7e1f0f924d9",
+                "reference": "297cb203b7e640253323a4322721f7e1f0f924d9",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0.6"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "description": "Houses the Amazon Web Services (AWS) PHP libraries and manages access keys. Required by other AWS plugins.",
+            "homepage": "https://github.com/deliciousbrains/wp-amazon-web-services",
+            "keywords": [
+                "amazon",
+                "amazon-web-services",
+                "aws",
+                "plugin"
+            ],
+            "time": "2017-06-19T14:08:48+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -284,16 +349,16 @@
             "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
-            "name": "wpackagist-plugin/display-posts-shortcode",
-            "version": "2.8.0",
+            "name": "wpackagist-plugin/mce-table-buttons",
+            "version": "3.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/display-posts-shortcode/",
-                "reference": "tags/2.8.0"
+                "url": "https://plugins.svn.wordpress.org/mce-table-buttons/",
+                "reference": "tags/3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/display-posts-shortcode.2.8.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/mce-table-buttons.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -301,7 +366,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/display-posts-shortcode/"
+            "homepage": "https://wordpress.org/plugins/mce-table-buttons/"
         }
     ],
     "packages-dev": [],
