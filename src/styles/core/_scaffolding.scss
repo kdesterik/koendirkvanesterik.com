@@ -5,8 +5,7 @@
 // Body reset
 
 html {
-  // font-size: 10px;
-  -webkit-tap-highlight-color: fade($black, 0);
+  -webkit-tap-highlight-color: rgba($black, 0);
 }
 
 body {
@@ -50,11 +49,20 @@ img {
 table {
   border-collapse: separate;
   border-spacing: 0;
+  overflow: hidden;
   width: 100%;
 
   tr {
     td {
       padding: 0;
+      position: relative;
+    }
+
+    td:first-child::after {
+      color: rgba($black, .2);
+      content: '....................................................................................................';
+      left: 0;
+      position: absolute;
     }
 
     td:last-child {

@@ -17,6 +17,7 @@
 
 .project-footer {
   font-size: $font-size-small;
+  margin-bottom: ($line-height-base * 5);
   text-transform: uppercase;
 
   a {
@@ -31,7 +32,7 @@
     border-right: 1px solid $black;
     color: transparent;
     height: $line-height-base;
-    // line-height: 1.5em;
+    line-height: ($line-height-base * 2);
     position: absolute;
     white-space: nowrap;
     width: $line-height-base * 2;
@@ -129,7 +130,7 @@
 
   .arrow-right {
     right: ($line-height-base * 2);
-    text-indent: -($line-height-base * 4);
+    text-indent: -2.5em;
 
     &::before,
     &::after {

@@ -22,6 +22,7 @@
 @import './components/instruction';
 @import './components/card';
 @import './components/image';
+@import './components/paragraph';
 
 
 // Containers
@@ -36,8 +37,10 @@
 //
 // All layout scss imports
 
+@import './layouts/app';
 @import './layouts/header';
 @import './layouts/footer';
+@import './layouts/overview';
 @import './layouts/project';
 
 

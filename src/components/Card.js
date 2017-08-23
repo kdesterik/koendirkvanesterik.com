@@ -21,11 +21,7 @@ export default class Card extends React.Component {
               <span dangerouslySetInnerHTML={{ __html: project.title.rendered }} />
             </Link>
           </h3>
-          <p>
-            <Link to={ '/project/' + project.slug + '/' }>
-              <span dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }} />
-            </Link>
-          </p>
+          <Link to={ '/project/' + project.slug + '/' } dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}></Link>
         </header>
         <footer className='card-footer'>
           <Link to={ '/project/' + project.slug + '/' }>{ VIEW_PROJECT }</Link>

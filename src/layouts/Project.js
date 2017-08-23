@@ -66,7 +66,6 @@ function mapStateToProps( state, props ){
   let project = state.portfolio.find( project => project.slug === props.match.params.slug );
   let total = state.portfolio.length;
   let current = 0;
-  
 
   for( let i = 0; i < state.portfolio.length; i++ ){
     if( state.portfolio[ i ].slug === props.match.params.slug ) current = i;  
@@ -85,7 +84,7 @@ function mapStateToProps( state, props ){
 
 function processContent( project ){
 
-  let data = project.content.raw.split( /<hr\s?\/>/g );
+  let data = project.content.raw.split( /<!--more-->/g );
   let content = data.map(( section, index ) => {
     let paragraphs = section.split( /&nbsp;/mg );
     return paragraphs.map(( paragraph, index ) => {
