@@ -9,6 +9,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media only screen and (max-width: 48em) {
+    background-size: contain;
+  }
+
   .card-header,
   .card-footer {
     display: none;
@@ -22,11 +26,16 @@
 
   .card-footer {
     align-self: flex-end;
+    word-spacing: .25em;
 
     a {
       font-size: $font-size-small;
       font-weight: 600;
       text-transform: uppercase;
+    }
+
+    @media only screen and (max-width: 48em) {
+      align-self: flex-start;
     }
   }
 
@@ -37,14 +46,26 @@
 
   &.large {
     grid-column-end: span 2;
+
+    @media only screen and (max-width: 48em) {
+      grid-column-end: span 1;
+    }
   }
 
   &.medium {
     grid-row-end: span 2;
+
+    @media only screen and (max-width: 48em) {
+      grid-row-end: span 1;
+    }
   }
 
   &.small {
     height: $line-height-base * 12;
+
+    @media only screen and (max-width: 48em) {
+      height: $line-height-base * 25;
+    }
   }
 
   &.active {

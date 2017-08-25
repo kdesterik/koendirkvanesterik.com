@@ -12,12 +12,15 @@ h3 {
   font-family: $headings-font-family;
 }
 
+h1,
+h3 {
+  text-transform: uppercase;
+  word-spacing: .25em;
+}
+
 h1 {
   font-size: $font-size-h1;
   font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  word-spacing: 4px;
 }
 
 h2 {
@@ -34,7 +37,6 @@ h2 {
 h3 {
   font-size: $font-size-h3;
   margin: 0 0 $line-height-base;
-  text-transform: uppercase;
 }
 
 

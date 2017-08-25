@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Paragraph from '../components/Paragraph';
+import Columns from '../components/Columns';
 
 
 class Colophon extends React.Component {
@@ -10,7 +10,7 @@ class Colophon extends React.Component {
       <div className='colophon'>
       {
         this.props.colophon.map(( content, index ) => {
-          return( <Paragraph key={ index } text={ content} /> );
+          return( <Columns key={ index } width={ 'half' } text={ content} /> );
         })
       }
       </div>

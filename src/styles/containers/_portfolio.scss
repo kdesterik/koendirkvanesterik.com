@@ -1,11 +1,17 @@
 .portfolio {
 
   .grid {
+
     display: grid;
     grid-auto-flow: dense;
     grid-column-gap: $line-height-base;
     grid-row-gap: $line-height-base;
     grid-template-columns: 50% 50%;
     margin-bottom: $line-height-base * 4;
+
+    @media only screen and (max-width: 48em) {
+
+      grid-template-columns: 100%;
+    }
   }
 }

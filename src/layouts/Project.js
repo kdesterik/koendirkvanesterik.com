@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Section from '../components/Section';
-import Image from '../components/Image';
-import Paragraph from '../components/Paragraph';
+import Columns from '../components/Columns';
 
 import { 
   BACK_TO_OVERVIEW,
@@ -24,14 +23,7 @@ class Project extends React.Component {
               <Section key={ index }>
                 {
                   section.map(( paragraph, index ) => {
-                    switch( paragraph.type ){
-
-                      case 'image':
-                        return <Image key={ index } text={ paragraph.content } />
-
-                      default:
-                        return <Paragraph key={ index } text={ paragraph.content } />
-                    }
+                    return <Columns key={ index } width={ paragraph.type === 'image' ? 'full' : 'half' } text={ paragraph.content } />
                   })
                 }
               </Section>

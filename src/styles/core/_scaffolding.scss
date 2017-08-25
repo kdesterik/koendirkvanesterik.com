@@ -39,6 +39,7 @@ img {
   display: block;
   height: auto;
   margin: 0 auto;
+  // margin-bottom: $line-height-base;
   max-width: 100%;
   vertical-align: middle;
 }
@@ -58,15 +59,15 @@ table {
       position: relative;
     }
 
+    td + td {
+      text-align: right;
+    }
+
     td:first-child::after {
       color: rgba($black, .2);
       content: '....................................................................................................';
       left: 0;
       position: absolute;
-    }
-
-    td:last-child {
-      text-align: right;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Section from '../components/Section';
-import Paragraph from '../components/Paragraph';
+import Columns from '../components/Columns';
 import Instruction from '../components/Instruction';
 
 
@@ -14,7 +14,7 @@ class Intro extends React.Component {
           <div className='spacer'></div>
           {
             this.props.intro.map(( data, index ) => {
-              return( <Paragraph key={ index } text={ data.content.rendered } /> );
+              return( <Columns key={ index } width={ 'half' } text={ data.content.rendered } /> );
             })
           }
           <Instruction/>

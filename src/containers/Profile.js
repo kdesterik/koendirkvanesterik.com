@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Paragraph from '../components/Paragraph';
+import Columns from '../components/Columns';
 
 
 class Profile extends React.Component {
@@ -10,7 +10,7 @@ class Profile extends React.Component {
       <div className='profile'>
       {
         this.props.profile.map(( data, index ) => {
-          return( <Paragraph key={ index } text={ data.content.rendered } /> );
+          return( <Columns key={ index } width={ 'half' } text={ data.content.rendered } /> );
         })
       }
       </div>
