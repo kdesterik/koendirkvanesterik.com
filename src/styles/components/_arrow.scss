@@ -1,0 +1,124 @@
+.arrow-back,
+.arrow-left,
+.arrow-right {
+
+  font-size: $font-size-small;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 48em) {
+
+  .arrow-back {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    color: transparent;
+    height: $line-height-base;
+    line-height: ($line-height-base * 2);
+    white-space: nowrap;
+    width: $line-height-base * 2;
+
+    &::before,
+    &::after {
+      background-color: $black;
+      content: '';
+      height: ($line-height-base / 2);
+      left: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    &::before {
+      top: ($line-height-base / 2);
+      transform: rotate(45deg);
+      transform-origin: bottom;
+    }
+
+    &::after {
+      top: $line-height-base;
+      transform: rotate(-45deg);
+      transform-origin: top;
+    }
+
+    &:hover {
+      border-color: transparent;
+
+      &::before,
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .arrow-left,
+  .arrow-right {
+    background-color: $black;
+    color: transparent;
+    height: 1px;
+    line-height: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: $line-height-base * 2;
+
+    &::before,
+    &::after {
+      background-color: $black;
+      content: '';
+      height: ($line-height-base / 2);
+      position: absolute;
+      width: 1px;
+    }
+
+    &::before {
+      top: -(($line-height-base / 2) - .0625em);
+      transform-origin: bottom;
+    }
+
+    &::after {
+      top: 1px;
+      transform-origin: top;
+    }
+
+    &:hover {
+      background-color: transparent;
+      width: auto;
+
+      &::before,
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .arrow-left {
+
+    &::before,
+    &::after {
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .arrow-right {
+
+    &::before,
+    &::after {
+      right: 0;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

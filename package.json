@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-ga": "^2.2.0",
     "react-lazy-load": "^3.0.12",
     "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
@@ -30,5 +31,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://local.koendirkvanesterik.com/data"
+  "proxy": "http://local.koendirkvanesterik.com"
 }

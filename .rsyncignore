@@ -1,4 +1,4 @@
 composer.json
 composer.lock
-data/
+api/
 .DS_Store

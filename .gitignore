@@ -4,11 +4,11 @@
 node_modules/
 
 # data
-.access
 composer.lock
-data/wp-config.php
-data/wp/
-data/wp-content/plugins/
+api/wp-config.php
+api/wp/
+api/wp-content/plugins/
+api/wp-content/uploads/
 
 # production
 build/

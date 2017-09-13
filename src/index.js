@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 import config from './config';
+import ReactGA from 'react-ga';
 
 import App from './layouts/App';
 import Overview from './layouts/Overview';
@@ -20,17 +21,30 @@ const history = syncHistoryWithStore(
   store
 );
 
+
+ReactGA.initialize( 'UA-106387271-1' );
+
+const TrackPageView = () => {
+  let page = window.location.pathname + window.location.search;
+  ReactGA.set({ page: page });
+  ReactGA.pageview( page );
+  return null;
+}
+
+
 const ScrollToTop = () => {
   window.scrollTo( 0, 0 );
   return null;
 };
 
+
 ReactDOM.render(
   <Provider store={ store }>
-    <Router history={ history }>
+    <Router history={ history } onUpdate={ TrackPageView } >
       <App>
         <Loader/>
-        <Route component={ ScrollToTop } />
+        <TrackPageView/>
+        <ScrollToTop/>
         <Route exact={ true } path='/' component={ Overview }/>
         <Route path='/project/:slug/' component={ Project }/>
       </App>

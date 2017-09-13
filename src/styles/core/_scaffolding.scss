@@ -17,6 +17,12 @@ body {
   line-height: $line-height-base;
 }
 
+// Selection
+
+::selection {
+  background-color: $green;
+}
+
 // Links
 
 a {
@@ -42,6 +48,10 @@ img {
   // margin-bottom: $line-height-base;
   max-width: 100%;
   vertical-align: middle;
+}
+
+img + img {
+  margin-top: $line-height-base;
 }
 
 

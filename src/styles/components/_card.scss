@@ -5,37 +5,64 @@
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-  @media only screen and (max-width: 48em) {
-    background-size: contain;
+  // @media only screen and (max-width: 48em) {
+  //   background-size: contain;
+  // }
+
+  .card-header,
+  .card-body,
+  .card-footer {
+    display: none;
+    margin-left: $line-height-base;
+    margin-right: $line-height-base;
   }
 
   .card-header,
   .card-footer {
-    display: none;
+
+    a {
+      color: $white;
+      &:hover {
+        color: $black;
+      }
+    }
   }
 
   .card-header {
-    p {
-      max-width: 15.75em;
-    }
+    margin-top: $line-height-base;
+  }
+
+  .card-body {
+    color: $white;
+    max-width: 15.75em;
   }
 
   .card-footer {
-    align-self: flex-end;
     word-spacing: .25em;
+    margin-bottom: $line-height-base;
 
-    a {
-      font-size: $font-size-small;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+    @media only screen and (min-width: 48em) {
 
-    @media only screen and (max-width: 48em) {
-      align-self: flex-start;
+      .arrow-right {
+        background-color: $white;
+        color: transparent;
+
+        &::before,
+        &::after {
+          background-color: $white;
+        }
+
+        &:hover {
+          background-color: transparent;
+          color: $white;
+
+          &::before,
+          &::after {
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
 
@@ -69,10 +96,11 @@
   }
 
   &.active {
-    background-color: transparent;
+    background-color: $blue;
 
-    header,
-    footer {
+    .card-header,
+    .card-body,
+    .card-footer {
 
       display: block;
     }

@@ -6,7 +6,7 @@ export const LOAD_INTRO = 'actions.LOAD_INTRO';
 
 export function loadIntro(){
 
-  return loadData( 'intro', '/wp-json/wp/v2/pages?slug=intro', LOAD_INTRO );
+  return loadData( 'intro', '/api/wp-json/wp/v2/pages?slug=intro', LOAD_INTRO );
 };
 
 
@@ -18,7 +18,7 @@ export const LOAD_PORTFOLIO = 'actions.LOAD_PORTFOLIO';
 
 export function loadPortfolio(){
 
-  return loadData( 'portfolio', '/wp-json/wp/v2/posts?_embed', LOAD_PORTFOLIO );
+  return loadData( 'portfolio', '/api/wp-json/wp/v2/posts?_embed', LOAD_PORTFOLIO );
 };
 
 
@@ -40,7 +40,7 @@ export const LOAD_PROFILE = 'actions.LOAD_PROFILE';
 
 export function loadProfile(){
 
-  return loadData( 'profile', '/wp-json/wp/v2/pages?slug=profile', LOAD_PROFILE );
+  return loadData( 'profile', '/api/wp-json/wp/v2/pages?slug=profile', LOAD_PROFILE );
 };
 
 
@@ -52,7 +52,7 @@ export const LOAD_COLOPHON = 'actions.LOAD_COLOPHON';
 
 export function loadColophon(){
 
-  return loadData( 'colophon', '/wp-json/wp/v2/colophon', LOAD_COLOPHON );
+  return loadData( 'colophon', '/api/wp-json/wp/v2/colophon', LOAD_COLOPHON );
 };
 
 
@@ -64,7 +64,7 @@ export const LOAD_CHANNELS = 'actions.LOAD_CHANNELS';
 
 export function loadChannels(){
 
-  return loadData( 'channels', '/wp-json/wp/v2/channels', LOAD_CHANNELS );
+  return loadData( 'channels', '/api/wp-json/wp/v2/channels', LOAD_CHANNELS );
 };
 
 
@@ -76,10 +76,10 @@ function loadData( name, route, action ){
   return ( dispatch ) => {
     return fetch( route )
       .then( response => response.json() )
-      .then( ( data ) => {
+      .then( ( api ) => {
         dispatch({
           type: action,
-          [ name ]: data ? data : [],
+          [ name ]: api ? api : [],
         });
       }
     );

@@ -1,0 +1,10 @@
+.desktop {
+
+  $opacity: .09;
+
+  border: 1px solid rgba($black, $opacity);
+  border-radius: ($line-height-base / 7)
+                 ($line-height-base / 7)
+                 ($line-height-base / 4)
+                 ($line-height-base / 4);
+}

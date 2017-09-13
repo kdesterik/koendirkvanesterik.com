@@ -9,7 +9,7 @@ export default class Card extends React.Component {
   render() {
 
     const { project, toggle } = this.props;
-    const sizes = [ 'large', 'medium', 'small', 'medium', 'medium', 'small' ];
+    const sizes = [ 'large', 'medium', 'small', 'medium', 'small' ];
     let classes = sizes[ Number( project.index ) % sizes.length ];
         classes += project.active ? ' active' : '';
 
@@ -21,10 +21,10 @@ export default class Card extends React.Component {
               <span dangerouslySetInnerHTML={{ __html: project.title.rendered }} />
             </Link>
           </h3>
-          <Link to={ '/project/' + project.slug + '/' } dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}></Link>
         </header>
+        <div className='card-body' dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}></div>
         <footer className='card-footer'>
-          <Link to={ '/project/' + project.slug + '/' }>{ VIEW_PROJECT }</Link>
+          <Link className='arrow-right' to={ '/project/' + project.slug + '/' }>{ VIEW_PROJECT }</Link>
         </footer>
       </article>
     );

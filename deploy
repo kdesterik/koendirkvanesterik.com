@@ -25,11 +25,11 @@ if [ $# -eq 0 ]
         if [[ -z "$2" ]]
             then
                 echo "$DRY_RUN"
-                rsync --dry-run -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./data/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/data/wp-content/themes/koendirkvanesterik
+                rsync --dry-run -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./api/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/api/wp-content/themes/koendirkvanesterik
         elif [ "$2" == "production" ]
             then
                 echo "$DEPLOYMENT"
-                rsync -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./data/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/data/wp-content/themes/koendirkvanesterik
+                rsync -az --force --delete --progress --exclude-from=.rsyncignore -e "ssh -p22" ./api/wp-content/themes/koendirkvanesterik/ koendirkvanesterik@188.226.131.43:/var/www/html/api/wp-content/themes/koendirkvanesterik
         else
             echo "$ERROR";
         fi
