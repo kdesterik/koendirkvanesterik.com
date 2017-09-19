@@ -22,16 +22,6 @@ export function loadPortfolio(){
 };
 
 
-export const TOGGLE_PROJECT_EXCERPT = 'actions.TOGGLE_PROJECT_EXCERPT';
-
-export function toggleProjectData( project ){
-  return {
-    type: TOGGLE_PROJECT_EXCERPT,
-    id: project.id,
-  };
-};
-
-
 /*
  * Profile actions
  */
@@ -45,30 +35,6 @@ export function loadProfile(){
 
 
 /*
- * Colophon actions
- */
-
-export const LOAD_COLOPHON = 'actions.LOAD_COLOPHON';
-
-export function loadColophon(){
-
-  return loadData( 'colophon', '/api/wp-json/wp/v2/colophon', LOAD_COLOPHON );
-};
-
-
-/*
- * Channels actions
- */
-
-export const LOAD_CHANNELS = 'actions.LOAD_CHANNELS';
-
-export function loadChannels(){
-
-  return loadData( 'channels', '/api/wp-json/wp/v2/channels', LOAD_CHANNELS );
-};
-
-
-/*
  * Load function
  */
 
@@ -76,10 +42,10 @@ function loadData( name, route, action ){
   return ( dispatch ) => {
     return fetch( route )
       .then( response => response.json() )
-      .then( ( api ) => {
+      .then( ( data ) => {
         dispatch({
           type: action,
-          [ name ]: api ? api : [],
+          [ name ]: data ? data : [],
         });
       }
     );

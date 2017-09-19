@@ -90,5 +90,4 @@ function processContent( project ){
   return content;
 }
 
-
 export default connect( mapStateToProps )( Project );

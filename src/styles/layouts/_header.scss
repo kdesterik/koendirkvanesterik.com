@@ -2,8 +2,54 @@
   margin-top: $line-height-base;
   position: fixed;
   width: 100%;
+  z-index: 20;
 
   .title {
     margin-bottom: 0;
+
+    .first-name,
+    .middle-name,
+    .prefix,
+    .last-name {
+      display: inline-block;
+    }
+
+    .first-name,
+    .middle-name,
+    .prefix {
+      margin-right: 8px;
+    }
+
+    .first-name {
+      @include slide-down(
+        $duration: .2s,
+        $delay: .2s,
+        $function: ease
+      );
+    }
+
+    .middle-name {
+      @include slide-down(
+        $duration: .2s,
+        $delay: .24s,
+        $function: ease
+      );
+    }
+
+    .prefix {
+      @include slide-down(
+        $duration: .2s,
+        $delay: .32s,
+        $function: ease
+      );
+    }
+
+    .last-name {
+      @include slide-down(
+        $duration: .2s,
+        $delay: .36s,
+        $function: ease
+      );
+    }
   }
 }

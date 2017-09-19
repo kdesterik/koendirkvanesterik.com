@@ -15,7 +15,7 @@ export default class Instruction extends React.Component {
                             col-sm-offset-2
                             col-sm-8
                             col-xs-12'>
-              <div className='scroll-down'>
+              <div className='mouse'>
                 <span/>
               </div>
             </div>

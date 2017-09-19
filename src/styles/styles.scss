@@ -14,6 +14,21 @@
 @import './core/responsive';
 
 
+// Mixins
+//
+// All mixins scss imports
+
+@import './mixins/animations';
+
+
+// Assets
+//
+// All asset scss imports
+
+@import './assets/channels';
+@import './assets/footer';
+
+
 // Components
 //
 // All component scss imports
@@ -30,17 +45,15 @@
 //
 // All container scss imports
 
+@import './containers/loader';
 @import './containers/portfolio';
-@import './containers/channels';
 
 
 // Layouts
 //
 // All layout scss imports
 
-@import './layouts/app';
 @import './layouts/header';
-@import './layouts/footer';
 @import './layouts/overview';
 @import './layouts/project';
 

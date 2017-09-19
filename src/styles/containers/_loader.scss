@@ -1,0 +1,38 @@
+.loader {
+
+  background-color: $white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  .background {
+
+    background-color: rgba($black, .03);
+
+    span {
+      animation: loading cubic-bezier(.455, .03, .515, .955) 1s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      background-color: $blue;
+      display: block;
+      height: 2px;
+      position: absolute;
+      transform: translateX(-87px);
+      width: 95px;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: translateX(-87px);
+      }
+
+      100% {
+        transform: translateX(242px);
+      }
+    }
+  }
+}
+

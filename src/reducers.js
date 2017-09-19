@@ -4,9 +4,6 @@ import {
   LOAD_INTRO,
   LOAD_PORTFOLIO,
   LOAD_PROFILE,
-  LOAD_COLOPHON,
-  LOAD_CHANNELS,
-  TOGGLE_PROJECT_EXCERPT,
 } from './actions';
 
 
@@ -39,13 +36,6 @@ export const portfolioReducer = ( state = [], action ) => {
     case LOAD_PORTFOLIO:
       return action.portfolio;
 
-    case TOGGLE_PROJECT_EXCERPT:
-      return state.map( project => {
-        return Object.assign({}, project, {
-          active: ( Number( project.id ) === Number( action.id )) ? !project.active : false
-        });
-      });
-
     default:
       return state;
   }
@@ -70,40 +60,6 @@ export const profileReducer = ( state = [], action ) => {
 
 
 /*
- * Colophon reducer
- */
-
-export const colophonReducer = ( state = [], action ) => {
-
-  switch( action.type ){
-
-    case LOAD_COLOPHON:
-      return action.colophon;
-
-    default:
-      return state;
-  }
-}
-
-
-/*
- * Channels reducer
- */
-
-export const channelsReducer = ( state = [], action ) => {
-
-  switch( action.type ){
-
-    case LOAD_CHANNELS:
-      return action.channels;
-
-    default:
-      return state;
-  }
-}
-
-
-/*
  * Root reducer
  */
 
@@ -113,8 +69,6 @@ export const rootReducer = combineReducers({
   intro: introReducer,
   portfolio: portfolioReducer,
   profile: profileReducer,
-  colophon: colophonReducer,
-  channels: channelsReducer,
 });
 
 

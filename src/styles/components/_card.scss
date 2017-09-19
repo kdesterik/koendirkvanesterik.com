@@ -5,28 +5,20 @@
   background-position: center center;
   background-repeat: no-repeat;
   cursor: pointer;
+  margin-top: $line-height-base;
+  width: 37.125em;
 
-  // @media only screen and (max-width: 48em) {
-  //   background-size: contain;
-  // }
-
-  .card-header,
-  .card-body,
-  .card-footer {
-    display: none;
-    margin-left: $line-height-base;
-    margin-right: $line-height-base;
+  @media only screen and (max-width: 48em) {
+    background-size: contain;
+    width: 100%;
   }
 
   .card-header,
-  .card-footer {
-
-    a {
-      color: $white;
-      &:hover {
-        color: $black;
-      }
-    }
+  .card-body {
+    color: $white;
+    display: none;
+    margin-left: $line-height-base;
+    margin-right: $line-height-base;
   }
 
   .card-header {
@@ -34,37 +26,9 @@
   }
 
   .card-body {
-    color: $white;
     max-width: 15.75em;
   }
 
-  .card-footer {
-    word-spacing: .25em;
-    margin-bottom: $line-height-base;
-
-    @media only screen and (min-width: 48em) {
-
-      .arrow-right {
-        background-color: $white;
-        color: transparent;
-
-        &::before,
-        &::after {
-          background-color: $white;
-        }
-
-        &:hover {
-          background-color: transparent;
-          color: $white;
-
-          &::before,
-          &::after {
-            background-color: transparent;
-          }
-        }
-      }
-    }
-  }
 
   &.large,
   &.medium {
@@ -72,19 +36,14 @@
   }
 
   &.large {
-    grid-column-end: span 2;
+    width: 100%;
 
-    @media only screen and (max-width: 48em) {
-      grid-column-end: span 1;
-    }
+    @media only screen and (max-width: 48em) {}
   }
 
   &.medium {
-    grid-row-end: span 2;
 
-    @media only screen and (max-width: 48em) {
-      grid-row-end: span 1;
-    }
+    @media only screen and (max-width: 48em) {}
   }
 
   &.small {
@@ -94,15 +53,19 @@
       height: $line-height-base * 25;
     }
   }
+}
 
-  &.active {
-    background-color: $blue;
+a {
+  &:hover {
+    .card {
+      background-color: $blue;
 
-    .card-header,
-    .card-body,
-    .card-footer {
+      .card-header,
+      .card-body,
+      .card-footer {
 
-      display: block;
+        display: block;
+      }
     }
   }
 }

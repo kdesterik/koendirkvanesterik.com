@@ -1,0 +1,203 @@
+// duration     Specifies how many seconds or milliseconds an animation takes to complete one cycle. Default 0
+//
+// delay        Specifies when the animation will start. Default 0
+//
+// function     Describes how the animation will progress over one cycle of its duration. Default "ease"
+//
+// count        Specifies the number of times an animation is played. Default 1
+//
+// fill-mode    Specifies if the effects of an animation are before the animation starts and after it ends.
+//
+// visibility   Determines whether or not a transformed element is visible when it is not facing the screen.
+
+
+$count-default:       1 !default;
+$duration-default:    .04s !default;
+$delay-default:       .2s !default;
+$function-default:    linear !default;
+$fill-default:        both;
+$visibility-default:  hidden !default;
+
+
+@mixin count($count: 1) {
+  animation-iteration-count: $count;
+}
+
+@mixin duration($duration: 1s) {
+  animation-duration: $duration;
+}
+
+@mixin delay($delay: .2s) {
+  animation-delay: $delay;
+}
+
+@mixin function($function: ease) {
+  animation-timing-function: $function;
+}
+
+@mixin fill-mode($fill: both) {
+  animation-fill-mode: $fill;
+}
+
+@mixin visibility($visibility: hidden) {
+  backface-visibility: $visibility;
+}
+
+@mixin transform($property) {
+  transform: $property;
+}
+
+@mixin transform-origin($transform-origin: center center) {
+  transform-origin: $transform-origin;
+}
+
+@mixin transform-style($transform-style: flat) {
+  transform-style: $transform-style;
+}
+
+@mixin animation-name($animation-name) {
+  animation-name: $animation-name;
+}
+
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+
+// Fade
+
+@include keyframes(fade) {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@mixin fade($count: $count-default, $duration: $duration-default, $delay: $delay-default, $function: $function-default, $fill: $fill-default, $visibility: $visibility-default) {
+  @include animation-name(fade);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@for $i from 0 through 47 {
+
+  $stagger: .2 + ($i * .04) + s;
+
+  .fade-in-#{$i}{
+    @include fade(
+      $delay: $stagger
+    );
+  }
+}
+
+
+
+// Slide down
+
+@include keyframes(slide-down) {
+  0% {
+    opacity: 0;
+    transform: translateY(-$line-height-base);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-down($count: $count-default, $duration: $duration-default, $delay: $delay-default, $function: $function-default, $fill: $fill-default, $visibility: $visibility-default) {
+  @include animation-name(slide-down);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+
+// Slide up
+
+@include keyframes(slide-up) {
+  0% {
+    opacity: 0;
+    transform: translateY($line-height-base);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-up($count: $count-default, $duration: $duration-default, $delay: $delay-default, $function: $function-default, $fill: $fill-default, $visibility: $visibility-default) {
+  @include animation-name(slide-up);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+
+// Slide left
+
+@include keyframes(slide-left) {
+  0% {
+    opacity: 0;
+    transform: translateX(-$line-height-base);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-left($count: $count-default, $duration: $duration-default, $delay: $delay-default, $function: $function-default, $fill: $fill-default, $visibility: $visibility-default) {
+  @include animation-name(slide-left);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+
+
+// Slide right
+
+@include keyframes(slide-right) {
+  0% {
+    opacity: 0;
+    transform: translateX($line-height-base);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-right($count: $count-default, $duration: $duration-default, $delay: $delay-default, $function: $function-default, $fill: $fill-default, $visibility: $visibility-default) {
+  @include animation-name(slide-right);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+
+

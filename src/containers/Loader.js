@@ -4,8 +4,6 @@ import {
   loadIntro,
   loadPortfolio,
   loadProfile,
-  loadColophon,
-  loadChannels,
 } from '../actions';
 
 
@@ -16,13 +14,23 @@ class Loader extends React.Component {
     this.props.dispatch( loadIntro() );
     this.props.dispatch( loadPortfolio() );
     this.props.dispatch( loadProfile() );
-    this.props.dispatch( loadColophon() );
-    this.props.dispatch( loadChannels() );
   }
 
   render() {
-    return null;
+    return (
+      !this.props.loaded ? (
+        <div className='loader'><div className='background'><span/></div></div>
+      ) : (
+        null
+      )
+    );
   }
 }
 
-export default connect()( Loader );
+function mapStateToProps( state ){
+  return {
+    loaded: state.intro.length > 0 && state.portfolio.length > 0 && state.profile.length > 0
+  }
+}
+
+export default connect( mapStateToProps )( Loader );

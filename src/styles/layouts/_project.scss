@@ -16,10 +16,24 @@
     }
 
     .arrow-left {
+
+      @include slide-left(
+        $duration: .2s,
+        $delay: .8s,
+        $function: ease
+      );
+
       left: ($line-height-base * 2);
     }
 
     .arrow-right {
+
+      @include slide-right(
+        $duration: .2s,
+        $delay: .8s,
+        $function: ease
+      );
+
       right: ($line-height-base * 2);
       text-indent: -2.5em;
     }

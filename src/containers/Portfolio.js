@@ -1,17 +1,20 @@
 import React from 'react';
 import Card from '../components/Card';
 import { connect } from 'react-redux';
-import { toggleProjectData } from '../actions';
+import Masonry from 'react-masonry-component';
 
 
 class Portfolio extends React.Component {
 
-  constructor( props ){
-    super( props );
-    this.handleClick = this.handleClick.bind( this );
-  }
-
   render(){
+
+    let options = {
+      gutter: 28,
+      columnWidth: '.small',
+      itemSelector: '.card',
+      transitionDuration: 0
+    }
+
     return (
       <div className='portfolio'>
         <div className='container'>
@@ -20,24 +23,19 @@ class Portfolio extends React.Component {
                             col-md-12
                             col-sm-12
                             col-xs-12'>
-              <div className='grid'>
+              <Masonry className={ 'grid' } options={ options }>
                 { 
                   this.props.portfolio.map(( project, index ) => {
                     project = Object.assign({}, project, { index: index });
-                    return( <Card key={ index } project={ project } toggle={ this.handleClick } /> );
+                    return( <Card key={ index } project={ project } /> );
                   })
                 }
-              </div>
+              </Masonry>
             </div>
           </div>
         </div>
       </div>
     );
-  }
-
-  handleClick( project ){
-
-    this.props.dispatch( toggleProjectData( project ));
   }
 }
 

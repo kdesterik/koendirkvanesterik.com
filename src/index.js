@@ -9,7 +9,7 @@ import ReactGA from 'react-ga';
 
 import App from './layouts/App';
 import Overview from './layouts/Overview';
-import Project from './layouts/Project';
+import Project from './containers/Project';
 import Loader from './containers/Loader';
 
 import './styles/styles.css';
@@ -24,7 +24,7 @@ const history = syncHistoryWithStore(
 
 ReactGA.initialize( 'UA-106387271-1' );
 
-const TrackPageView = () => {
+const Tracker = () => {
   let page = window.location.pathname + window.location.search;
   ReactGA.set({ page: page });
   ReactGA.pageview( page );
@@ -32,7 +32,7 @@ const TrackPageView = () => {
 }
 
 
-const ScrollToTop = () => {
+const Scroller = () => {
   window.scrollTo( 0, 0 );
   return null;
 };
@@ -40,12 +40,12 @@ const ScrollToTop = () => {
 
 ReactDOM.render(
   <Provider store={ store }>
-    <Router history={ history } onUpdate={ TrackPageView } >
+    <Router history={ history }>
       <App>
         <Loader/>
-        <TrackPageView/>
-        <ScrollToTop/>
-        <Route exact={ true } path='/' component={ Overview }/>
+        <Route component={ Tracker }/>
+        <Route component={ Scroller }/>
+        <Route path='/' exact={ true } component={ Overview }/>
         <Route path='/project/:slug/' component={ Project }/>
       </App>
     </Router>

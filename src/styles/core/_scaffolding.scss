@@ -11,10 +11,14 @@ html {
 body {
   background-color: $white;
   color: $black;
+  display: flex;
+  flex-direction: column;
   font-family: $font-family-base;
   font-size: $font-size-base;
+  justify-content: space-between;
   letter-spacing: $letter-spacing-base;
   line-height: $line-height-base;
+  min-height: 100vh;
 }
 
 // Selection

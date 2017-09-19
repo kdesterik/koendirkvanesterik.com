@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { VIEW_PROJECT } from '../snippets';
 
 
 export default class Card extends React.Component {
@@ -14,19 +12,14 @@ export default class Card extends React.Component {
         classes += project.active ? ' active' : '';
 
     return (
-      <article className={ 'card ' + classes } onClick={() => toggle( project )} style={{  backgroundImage: 'url(' + this.processImage( project ) + ')' }}>
-        <header className='card-header'>
-          <h3>
-            <Link to={ '/project/' + project.slug + '/' }>
-              <span dangerouslySetInnerHTML={{ __html: project.title.rendered }} />
-            </Link>
-          </h3>
-        </header>
-        <div className='card-body' dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}></div>
-        <footer className='card-footer'>
-          <Link className='arrow-right' to={ '/project/' + project.slug + '/' }>{ VIEW_PROJECT }</Link>
-        </footer>
-      </article>
+      <Link to={ '/project/' + project.slug + '/' }>
+        <article className={ 'card ' + classes } onClick={() => toggle( project )} style={{  backgroundImage: 'url(' + this.processImage( project ) + ')' }}>
+          <header className='card-header'>
+            <h3 dangerouslySetInnerHTML={{ __html: project.title.rendered }}></h3>
+          </header>
+          <div className='card-body' dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}></div>
+        </article>
+      </Link>
     );
   }
 
@@ -34,10 +27,4 @@ export default class Card extends React.Component {
 
     return project._embedded[ 'wp:featuredmedia' ] ? project._embedded[ 'wp:featuredmedia' ][ 0 ][ 'source_url' ] : ''
   }
-}
-
-Card.propTypes = {
-
-  project: PropTypes.object.isRequired,
-  toggle: PropTypes.func.isRequired,
 }
